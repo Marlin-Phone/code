@@ -1,0 +1,3 @@
+﻿  一维前缀和.cpp
+D:\code\cpp\一维前缀和\一维前缀和.cpp(19,19): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
+  一维前缀和.vcxproj -> D:\code\cpp\一维前缀和\x64\Debug\一维前缀和.exe

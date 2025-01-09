@@ -1,0 +1,3 @@
+﻿  二分查找.cpp
+D:\code\cpp\Learning-二分查找\二分查找.cpp(22,19): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
+  二分查找.vcxproj -> D:\code\cpp\Learning-二分查找\x64\Debug\二分查找.exe

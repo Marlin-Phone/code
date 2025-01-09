@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35312.102
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "P1163 银行贷款（浮点数二分）", "P1163 银行贷款（浮点数二分）.vcxproj", "{00CB61D5-0AF5-4CA2-AE6B-B8BAAC4543FE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{00CB61D5-0AF5-4CA2-AE6B-B8BAAC4543FE}.Debug|x64.ActiveCfg = Debug|x64
+		{00CB61D5-0AF5-4CA2-AE6B-B8BAAC4543FE}.Debug|x64.Build.0 = Debug|x64
+		{00CB61D5-0AF5-4CA2-AE6B-B8BAAC4543FE}.Debug|x86.ActiveCfg = Debug|Win32
+		{00CB61D5-0AF5-4CA2-AE6B-B8BAAC4543FE}.Debug|x86.Build.0 = Debug|Win32
+		{00CB61D5-0AF5-4CA2-AE6B-B8BAAC4543FE}.Release|x64.ActiveCfg = Release|x64
+		{00CB61D5-0AF5-4CA2-AE6B-B8BAAC4543FE}.Release|x64.Build.0 = Release|x64
+		{00CB61D5-0AF5-4CA2-AE6B-B8BAAC4543FE}.Release|x86.ActiveCfg = Release|Win32
+		{00CB61D5-0AF5-4CA2-AE6B-B8BAAC4543FE}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {33F89EAC-0B2C-4839-8783-7AD11BE74BC4}
+	EndGlobalSection
+EndGlobal
