@@ -41,6 +41,6 @@ int main() {
         cin >> num[i];
     }
     cout << binary_search(num, n, 5) << endl; // 二分查找5的第一个位置
-    cout << binary_search_2(num, n, 0) << endl; // 查找<100的最后一个元素
+    cout << binary_search_2(num, n, 0) << endl; // 查找<0的最后一个元素
     return 0;
 }
