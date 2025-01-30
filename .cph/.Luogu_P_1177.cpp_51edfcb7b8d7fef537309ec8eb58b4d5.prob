@@ -1,0 +1,1 @@
+{"name":"Luogu - P1177","url":"https://www.luogu.com.cn/problem/P1177","memoryLimit":262144,"timeLimit":1000,"tests":[{"id":1738257355669,"input":"5\n4 2 4 5 1","output":"1 2 4 4 5"}],"group":"luogu","srcPath":"d:\\code\\Luogu_P_1177.cpp"}
