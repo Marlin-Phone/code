@@ -1,0 +1,1 @@
+{"name":"Local: T565233","url":"d:\\code\\cpp\\T565233\\T565233.cpp","tests":[{"id":1738315406973,"input":"7 3\n1 1 4 5 1 4 1","output":"21"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\code\\cpp\\T565233\\T565233.cpp","group":"local","local":true}

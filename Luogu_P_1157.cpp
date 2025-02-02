@@ -1,3 +1,4 @@
+// https://www.luogu.com.cn/problem/P1157
 #include <bits/stdc++.h>
 using namespace std;
 #define IOS                                                                    \
@@ -6,32 +7,30 @@ using namespace std;
     cout.tie(0);
 #define endl '\n'
 
-const int N = 0;
-int n;
+int n, r; // n个元素中选r个
+const int N = 25;
 bool st[N];
 int arr[N];
 
-void dfs(int x) {
-    if (x > n) {
-        for (int i = 1; i <= n; i++) {
-            cout << "    " << arr[i];
+void dfs(int x, int start) {
+    if (x > r) {
+        for (int i = 1; i <= r; i++) {
+            cout << setw(3) << arr[i];
         }
         cout << endl;
-        return;
+        return; // 递归出口
     }
 
-    for (int i = 1; i <= n; i++) {
-        if (!st[i]) {
-            st[i] = true;
-            arr[x] = i;
-            dfs(x + 1);
-            st[i] = false;
-        }
+    for (int i = start; i <= n; i++) {
+        st[i] = true;
+        arr[x] = i;
+        dfs(x + 1, i + 1);
+        st[i] = false;
     }
 }
 int main() {
     IOS;
-    cin >> n;
-    dfs(1);
+    cin >> n >> r;
+    dfs(1, 1);
     return 0;
 }
