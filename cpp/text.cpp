@@ -1,37 +1,8 @@
-#include <bits/stdc++.h>
+#include <cmath>
+#include <iostream>
 using namespace std;
-#define IOS                                                                    \
-    ios::sync_with_stdio(0);                                                   \
-    cin.tie(0);                                                                \
-    cout.tie(0);
-#define endl '\n'
-
-const int N = 0;
-int n;
-bool st[N];
-int arr[N];
-
-void dfs(int x) {
-    if (x > n) {
-        for (int i = 1; i <= n; i++) {
-            cout << "    " << arr[i];
-        }
-        cout << endl;
-        return;
-    }
-
-    for (int i = 1; i <= n; i++) {
-        if (!st[i]) {
-            st[i] = true;
-            arr[x] = i;
-            dfs(x + 1);
-            st[i] = false;
-        }
-    }
-}
 int main() {
-    IOS;
-    cin >> n;
-    dfs(1);
+    cout << pow(3, 10) << endl;
+
     return 0;
 }
