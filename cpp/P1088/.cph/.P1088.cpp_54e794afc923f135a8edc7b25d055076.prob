@@ -1,0 +1,1 @@
+{"name":"Local: P1088","url":"d:\\code\\cpp\\P1088\\P1088.cpp","tests":[{"id":1739579681940,"input":"5\n3\n1 2 3 4 5","output":"1 2 4 5 3"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\code\\cpp\\P1088\\P1088.cpp","group":"local","local":true}

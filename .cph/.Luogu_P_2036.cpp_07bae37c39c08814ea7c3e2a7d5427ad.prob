@@ -1,0 +1,1 @@
+{"name":"Luogu - P2036","url":"https://www.luogu.com.cn/problem/P2036","memoryLimit":32768,"timeLimit":1000,"tests":[{"input":"1\n3 10","output":"7","id":1739584435192},{"input":"2\n3 8\n5 8","output":"1","id":1739584435223},{"id":1739584435172,"input":"4\n1 7\n2 6\n3 8\n4 9","output":"1"}],"group":"luogu","srcPath":"d:\\code\\Luogu_P_2036.cpp"}
