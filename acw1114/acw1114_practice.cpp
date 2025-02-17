@@ -7,41 +7,43 @@ using namespace std;
 #define endl '\n'
 
 const int N = 10;
-int ans = 0;
 int n, k;     // n * n的棋盘 k个棋子
-bool st[N];   // 存状态
 char g[N][N]; // 存地图
+bool st[N];   // 存状态
+int ans = 0;
 
 void dfs(int x, int cnt) { // x 表示当前的行数 cnt 记录当前放了多少个棋子
     if (cnt == k) {
         ans++;
         return;
     }
-    if (x >= n) {
+    if (x == n) {
         return;
     }
 
     for (int i = 0; i < n; i++) {
-        if (!st[i] && g[i][x] == '#') { // 第i列没放过棋子 且 这个点是"#"
+        if (st[i] == false && g[x][i] == '#') {
             st[i] = true;
             dfs(x + 1, cnt + 1);
-            st[i] = false; // 回溯
+            st[i] = false;
         }
     }
-    dfs(x + 1, cnt);
+    dfs(x + 1, cnt); // 强行访问下一行
 }
 int main() {
     IOS;
 
     while (cin >> n >> k && n > 0 && k > 0) {
-        ans = 0;
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
                 cin >> g[i][j];
             }
         }
 
+        ans = 0;
+
         dfs(0, 0);
+
         cout << ans << endl;
     }
 

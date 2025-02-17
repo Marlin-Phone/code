@@ -1,8 +1,11 @@
-#include <cmath>
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
+#define endl '\n'
+
 int main() {
-    cout << pow(3, 10) << endl;
+    ios::sync_with_stdio(false);
+    cin.tie(0);
+    cout.tie(0);
 
     return 0;
 }
