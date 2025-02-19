@@ -1,0 +1,1 @@
+{"name":"Local: 844-practice","url":"d:\\code\\cpp\\acwing844\\844-practice.cpp","tests":[{"id":1739948166748,"input":"5 5\n0 1 0 0 0\n0 1 0 1 0\n0 0 0 0 0\n0 1 1 1 0\n0 0 0 1 0","output":"8"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\code\\cpp\\acwing844\\844-practice.cpp","group":"local","local":true}

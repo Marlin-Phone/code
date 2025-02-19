@@ -1,0 +1,1 @@
+{"name":"Luogu - P1451","url":"https://www.luogu.com.cn/problem/P1451","memoryLimit":128000,"timeLimit":1000,"tests":[{"id":1739862565627,"input":"4 10\n0234500067\n1034560500\n2045600671\n0000000089\n","output":"4"}],"group":"luogu","srcPath":"d:\\code\\Luogu_P_1451.cpp"}
