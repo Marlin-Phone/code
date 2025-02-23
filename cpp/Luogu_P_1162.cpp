@@ -5,10 +5,10 @@ using namespace std;
 
 const int N = 40;
 int n;
-int g[N][N];
+int g[N][N]; // 存地图
 int dx[4] = {-1, 0, 1, 0};
 int dy[4] = {0, 1, 0, -1};
-int st[N][N] = {0};
+int st[N][N] = {0}; // 存状态:0为需要染色地区,1为不需要染色地区,2为边界
 queue<pair<int, int>> q;
 
 void bfs(int x, int y) {
