@@ -1,1 +1,1 @@
-{"name":"Luogu - P1216","url":"https://www.luogu.com.cn/problem/P1216","memoryLimit":128000,"timeLimit":1000,"tests":[{"id":1740233979688,"input":"5\n7\n3 8\n8 1 0\n2 7 4 4\n4 5 2 6 5 \n","output":"30\n"}],"group":"luogu","srcPath":"d:\\code\\cpp\\Luogu_P_1216.cpp"}
+{"name":"Luogu - P1216","url":"https://www.luogu.com.cn/problem/P1216","memoryLimit":128000,"timeLimit":1000,"tests":[{"id":1740299371778,"input":"5\n7\n3 8\n8 1 0\n2 7 4 4\n4 5 2 6 5 \n","output":"30\n"}],"group":"luogu","srcPath":"d:\\code\\cpp\\Luogu_P_1216.cpp"}

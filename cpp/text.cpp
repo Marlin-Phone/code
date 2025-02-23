@@ -1,33 +1,30 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-const int N = 1e4 + 10;
-int T;       // 数据组数
-long long m; // 序列中元素的和
+const int N = 1e3 + 10;
+int memo[N];
+int dp[N];
 
-int getnum(int x) {
-    int i = 1;
-    while (i <= x) {
-        i = i * 2;
+int dfs(int x) {
+    if (memo[x]) {
+        return memo[x];
     }
-    return i / 2;
-}
-bool cnt_flag(int x) {
-    int i = 1;
-    while (i <= x) {
-        i = i * 2;
+    if (x <= 2) {
+        return x;
     }
-    i = i / 2;
-    if (i == x) {
-        return true;
-    }
-    return false;
+    return memo[x] = dfs(x - 1) + dfs(x - 2);
 }
 
 int main() {
     int n;
     cin >> n;
-    cout << getnum(n) << endl;
-    cout << cnt_flag(n) << endl;
+
+    dp[1] = 1, dp[2] = 2;
+    for (int i = 3; i <= n; i++) {
+        dp[i] = dp[i - 1] + dp[i - 2];
+    }
+
+    cout << dp[n];
+
     return 0;
 }
