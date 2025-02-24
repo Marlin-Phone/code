@@ -1,0 +1,1 @@
+{"name":"Local: 01背包问题","url":"d:\\code\\cpp\\acw2\\01背包问题.cpp","tests":[{"id":1740385898758,"input":"4 5\n1 2\n2 4\n3 4\n4 5","output":"8"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\code\\cpp\\acw2\\01背包问题.cpp","group":"local","local":true}
