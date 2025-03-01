@@ -1,0 +1,1 @@
+{"name":"Luogu - B2033","url":"https://www.luogu.com.cn/problem/B2033","memoryLimit":131072,"timeLimit":1000,"tests":[{"input":"3 4","output":"12","id":1740753126343},{"id":1740753126379,"input":"36 18","output":"648"}],"group":"luogu","srcPath":"d:\\code\\cpp\\Luogu_B_2033.cpp"}
