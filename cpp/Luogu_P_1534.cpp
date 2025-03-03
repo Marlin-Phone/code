@@ -9,7 +9,7 @@ typedef struct {
 } Study;
 Study stu[N];
 int sum = 0;
-int sum0 = 0;
+int sum0;
 
 int main() {
 
