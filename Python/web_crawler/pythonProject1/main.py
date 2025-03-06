@@ -1,6 +1,6 @@
-import requests
-form bs4 import BeautifulSoup
-import selenium
+import bs4
+import form
+
 # 这是一个示例 Python 脚本。
 
 # 按 Shift+F10 执行或将其替换为您的代码。
