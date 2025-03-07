@@ -1,0 +1,1 @@
+{"name":"Luogu - P1719","url":"https://www.luogu.com.cn/problem/P1719","memoryLimit":128000,"timeLimit":1000,"tests":[{"id":1741338921333,"input":"4\n0 -2 -7 0\n 9 2 -6 2\n-4 1 -4  1 \n-1 8  0 -2\n","output":"15"},{"id":1741340937424,"input":"5\n1 2 3 4 5\n1 2 3 4 5\n1 2 3 4 5\n1 2 3 4 5\n1 2 3 4 5","output":""}],"group":"luogu","srcPath":"d:\\code\\Luogu_P_1719.cpp"}
