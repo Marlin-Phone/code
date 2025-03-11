@@ -1,0 +1,1 @@
+{"name":"Luogu - P2440","url":"https://www.luogu.com.cn/problem/P2440","memoryLimit":131072,"timeLimit":1000,"tests":[{"id":1741698133280,"input":"3 7\n232\n124\n456","output":"114"},{"id":1741698322724,"input":"2 6\n11\n21","output":"5"},{"id":1741698487225,"input":"3 6\n11\n21\n1","output":"5"}],"group":"luogu","srcPath":"d:\\code\\Luogu_P_2440.cpp"}

@@ -1,12 +1,20 @@
+#include <algorithm>
 #include <iostream>
-#include <string>
+#include <vector>
 using namespace std;
 
-string S;
-string T;
+bool cmp(pair<int, int> a, pair<int, int> b) {
+    if (a.second != b.second) {
+        return a.second < b.second;
+    }
+    return a.first > b.first;
+}
 
 int main() {
-    cin >> S;
-
+    vector<int> a({1, 2, 3, 4, 5});
+    reverse(a.begin(), a.end());
+    for (auto it = a.begin(); it != a.end(); it++) {
+        cout << *it << " ";
+    }
     return 0;
 }
