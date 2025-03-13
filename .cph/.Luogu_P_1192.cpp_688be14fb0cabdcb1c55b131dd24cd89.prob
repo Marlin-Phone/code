@@ -1,1 +1,1 @@
-{"name":"Luogu - P1192","url":"https://www.luogu.com.cn/problem/P1192","memoryLimit":128000,"timeLimit":1000,"tests":[{"id":1737296235362,"input":"5 2","output":"8"}],"group":"luogu","srcPath":"d:\\code\\Luogu_P_1192.cpp"}
+{"name":"Luogu - P1192","url":"https://www.luogu.com.cn/problem/P1192","memoryLimit":128000,"timeLimit":1000,"tests":[{"id":1741872021952,"input":"5 2","output":"8"},{"id":1741872578183,"input":"5 5","output":""},{"id":1741873720494,"input":"100 100","output":""}],"group":"luogu","srcPath":"d:\\code\\Luogu_P_1192.cpp"}

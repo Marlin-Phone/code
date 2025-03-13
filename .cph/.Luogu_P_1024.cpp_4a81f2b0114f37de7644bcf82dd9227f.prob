@@ -1,0 +1,1 @@
+{"name":"Luogu - P1024","url":"https://www.luogu.com.cn/problem/P1024","memoryLimit":128000,"timeLimit":1000,"tests":[{"id":1741866826900,"input":"1 -5 -4 20\n","output":"-2.00 2.00 5.00\n"}],"group":"luogu","srcPath":"d:\\code\\Luogu_P_1024.cpp"}
