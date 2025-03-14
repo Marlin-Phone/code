@@ -2,45 +2,61 @@
 using namespace std;
 
 const int N = 5e4 + 10;
-int l;     // 起点到终点的距离
-int n;     // 起点和终点之间的岩石数
-int m;     // 组委会至多移走的岩石数
-           // D[i] 表示第i块岩石距起点的距离
-int dx[N]; // 差分
+int l, n, m;
+int D[N];
+int dx[N];
+int ans = 0;
+int flag[N];
+int res = 1e9;
 
+bool check(int x) {
+    int ans = 0;
+    for (int i = 1; i <= n; i++) {
+        if (dx[i] < x) {
+            ans++;
+        }
+    }
+
+    cout << "ans = " << ans << endl;
+    if (ans <= m) {
+        return true;
+    } else {
+        return false;
+    }
+}
 int main() {
     cin >> l >> n >> m;
-    vector<int> D(n + 10);
     for (int i = 1; i <= n; i++) {
         cin >> D[i];
-    }
-    int m0 = m;
-    while (m--) {
-        int mindx = 1e9;
-        for (int i = 1; i < n - (m0 - m); i++) {
-            dx[i] = D[i] - D[i - 1];
-            // cout << dx[i] << " ";
-            mindx = min(dx[i], mindx);
-        }
-        for (int i = 1; i < n - (m0 - m); i++) {
-            if (dx[i] == mindx) {
-                D.erase(D.begin() + i);
-            }
-        }
-    }
-
-    // cout << endl;
-
-    int mindx = 1e9;
-    for (int i = 1; i <= n - m0; i++) {
         dx[i] = D[i] - D[i - 1];
-        // cout << dx[i] << " ";
-        mindx = min(dx[i], mindx);
     }
-    // cout << endl;
-    if (mindx == 1e9)
-        mindx = l;
-    cout << mindx;
+
+    for (int i = 1; i <= n; i++) {
+        cout << dx[i] << " ";
+    }
+    cout << endl;
+
+    int left = 0, right = l;
+    while (left + 1 != right) {
+        int mid = (left + right) / 2;
+        if (check(mid)) {
+            left = mid;
+            cout << "left = " << left << endl;
+        } else {
+            right = mid;
+            cout << "right = " << right << endl;
+        }
+    }
+
+    cout << left << endl;
+
+    for (int i = 1; i <= n; i++) {
+        if (dx[i] > left) {
+            res = min(res, dx[i]);
+        }
+    }
+
+    cout << res;
 
     return 0;
 }
