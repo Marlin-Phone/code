@@ -1,0 +1,1 @@
+{"name":"Luogu - P1271","url":"https://www.luogu.com.cn/problem/P1271","memoryLimit":128000,"timeLimit":1000,"tests":[{"id":1742139755338,"input":"5 10\n2 5 2 2 5 2 2 2 1 2","output":"1 2 2 2 2 2 2 2 5 5"}],"group":"luogu","srcPath":"d:\\code\\Luogu_P_1271.cpp"}
