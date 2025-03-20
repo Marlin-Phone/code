@@ -1,0 +1,1 @@
+{"name":"Luogu - P1200","url":"https://www.luogu.com.cn/problem/P1200","memoryLimit":128000,"timeLimit":1000,"tests":[{"input":"COMETQ\nHVNGAT","output":"GO","id":1742453593901},{"id":1742453593957,"input":"ABSTAR\nUSACO","output":"STAY"},{"id":1742454234288,"input":"ABCDEF\nABCDEF","output":""}],"group":"luogu","srcPath":"d:\\code\\cpp\\luogu\\Luogu_P_1200.cpp"}

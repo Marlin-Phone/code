@@ -1,0 +1,1 @@
+{"name":"Luogu - P5731","url":"https://www.luogu.com.cn/problem/P5731","memoryLimit":128000,"timeLimit":1000,"tests":[{"id":1742478595758,"input":"4","output":"  1  2  3  4\n 12 13 14  5\n 11 16 15  6\n 10  9  8  7"}],"group":"luogu","srcPath":"d:\\code\\cpp\\luogu\\Luogu_P_5731.cpp"}
