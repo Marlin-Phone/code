@@ -1,3 +1,11 @@
+/*
+ * @acwing app=acwing.cn id=1211 lang=C++
+ *
+ * 1209. 带分数
+ */
+
+// @acwing code start
+
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -19,7 +27,7 @@ void dfs(int x) {
     if (x > 9) {
         for (int i = 1; i <= 7; i++) {
             int a = calculate(1, i);
-            for (int j = i + 1; j <= 8 - i; j++) {
+            for (int j = i + 1; j <= 8; j++) {
                 int b = calculate(i + 1, j);
                 int c = calculate(j + 1, 9);
                 if (b % c == 0 && a + b / c == num) {
@@ -46,3 +54,4 @@ int main() {
     cout << ans;
     return 0;
 }
+// @acwing code end

@@ -1,7 +1,5 @@
-package Java;
-
 public class HelloWorld {
     public static void main(String[] args) {
-        System.out.println("Hello, VS Code!");
+        System.out.println("Hello, World!");
     }
 }
