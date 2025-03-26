@@ -1,0 +1,1 @@
+{"name":"Luogu - P1068","url":"https://www.luogu.com.cn/problem/P1068","memoryLimit":128000,"timeLimit":1000,"tests":[{"id":1742996274559,"input":"6 3 \n2390 95 \n1005 95 \n1001 88\n7231 84 \n3239 88 \n1000 90 ","output":"88 5 \n1005 95 \n2390 95 \n1000 90 \n1001 88 \n3239 88 "}],"group":"luogu","srcPath":"d:\\code\\cpp\\luogu\\Luogu_P_1068.cpp"}
