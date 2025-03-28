@@ -11,9 +11,18 @@ using namespace std;
 
 const int N = 10;
 char g[N][N];
+char backup[N][N];
 
 signed main() {
-    for (int i = 0;)
+    for (int i = 0; i < 4; i++) {
+        for (int j = 0; j < 4; j++) {
+            cin >> g[i];
+        }
+    }
+
+    for (int op = 0; op < 1 << 16; op++){
+        for(int i = )
+    }
 
         return 0;
 }
