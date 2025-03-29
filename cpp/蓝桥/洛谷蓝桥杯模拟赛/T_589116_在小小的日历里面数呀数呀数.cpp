@@ -1,10 +1,11 @@
+// 闰年判断错误,&&写为了||
 #include <bits/stdc++.h>
 using namespace std;
 
 int day = 0;
 
 bool isrun(int year) {
-    if (year % 4 == 0 && year % 100 != 0 && year % 400 == 0) {
+    if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
         return true; // 是闰年
     } else {
         return false; // 不是闰年
