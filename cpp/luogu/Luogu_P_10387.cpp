@@ -15,7 +15,7 @@ signed main() {
 
     int l = -1, r = 1e6 + 1;
     while (l + 1 != r) {
-        int mid = (l + r) / 2;
+        P int mid = (l + r) / 2;
         if (check(mid)) {
 
         } else {
