@@ -1,0 +1,1 @@
+{"name":"Luogu - P1094","url":"https://www.luogu.com.cn/problem/P1094","memoryLimit":128000,"timeLimit":1000,"tests":[{"id":1743601354677,"input":"100 \n9 \n90 \n20 \n20 \n30 \n50 \n60 \n70 \n80 \n90\n","output":"6\n"}],"group":"luogu","srcPath":"d:\\code\\cpp\\luogu\\Luogu_P_1094.cpp"}

@@ -70,6 +70,7 @@
         "typeindex": "cpp",
         "typeinfo": "cpp",
         "regex": "cpp",
-        "sstream": "cpp"
+        "sstream": "cpp",
+        "stdio.h": "c"
     }
 }
