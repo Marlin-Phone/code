@@ -73,5 +73,4 @@
         "sstream": "cpp",
         "stdio.h": "c"
     },
-    "C_Cpp.errorSquiggles": "disabled"
 }
