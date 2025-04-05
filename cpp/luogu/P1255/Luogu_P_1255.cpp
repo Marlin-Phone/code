@@ -2,7 +2,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-const int N = 5e3 + 10;
+const int N = 5e4 + 10;
 int n;
 int a[N], b[N], c[N], lc = 1;
 
@@ -30,10 +30,6 @@ int main() {
         if (c[lc + 1] > 0) {
             lc++;
         }
-        // swap(a, b);
-        // swap(b, c);
-        // a = b;
-        // b = c;
         for (int j = 1; j <= lc; j++) {
             a[j] = b[j];
         }

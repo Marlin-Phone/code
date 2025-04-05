@@ -73,4 +73,5 @@
         "sstream": "cpp",
         "stdio.h": "c"
     },
+    "commentTranslate.targetLanguage": "zh-CN",
 }
