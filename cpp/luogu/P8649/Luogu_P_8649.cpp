@@ -1,5 +1,5 @@
 // https://luogu.com.cn/problem/P8649
-// 前缀和 前缀和余数的性质 枚举
+// 前缀和 前缀和余数的性质 枚举 组合公式C(n, k) = n! / (k! * (n - 1))
 #include <bits/stdc++.h>
 using namespace std;
 #define endl '\n'
