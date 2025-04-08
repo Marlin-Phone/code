@@ -1,11 +1,14 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+int __lcm(int a, int b) { return a * b / __gcd(a, b); }
 int main() {
-    double a = 1;
-    double b = 1;
 
-    printf("%d", a == b);
+    int ans;
+    ans = 45;
+    ans ^= 9;
+    ans ^= 16;
+    cout << ans;
 
     return 0;
 }
