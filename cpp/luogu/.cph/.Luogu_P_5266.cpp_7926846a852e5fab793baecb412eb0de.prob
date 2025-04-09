@@ -1,0 +1,1 @@
+{"name":"Luogu - P5266","url":"https://www.luogu.com.cn/problem/P5266","memoryLimit":128000,"timeLimit":1000,"tests":[{"id":1744200206314,"input":"5\n1 lxl 10\n2 lxl\n3 lxl\n2 lxl\n4","output":"OK\n10\nDeleted successfully\nNot found\n0\n"}],"group":"luogu","srcPath":"d:\\code\\cpp\\luogu\\Luogu_P_5266.cpp"}

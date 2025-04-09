@@ -1,0 +1,1 @@
+{"name":"Luogu - P2040","url":"https://www.luogu.com.cn/problem/P2040","memoryLimit":128000,"timeLimit":1000,"tests":[{"id":1744190871971,"input":"0 1 1\n1 0 0\n1 0 1","output":"2"}],"group":"luogu","srcPath":"d:\\code\\cpp\\luogu\\Luogu_P_2040.cpp"}
