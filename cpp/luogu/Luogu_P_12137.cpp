@@ -31,6 +31,7 @@ void dfs(int x) {
                 st[i] == 1;
                 // cout << "tempA[i] = " << tempA[i] << endl;
             }
+            111
         }
 
         for (int i = 1; i <= n; i++) {
