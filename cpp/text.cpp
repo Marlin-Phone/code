@@ -1,39 +1,80 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int jia, yi;
-int n;
-int jhan, jh, yhan, yh;
-int cnta = 0, cntb = 0;
+string A, B;
+bool Aiswrong, Biswrong;
+int numA, numB;
 
-void check() {
-    if (jh == jhan + yhan && yh != jhan + yhan) {
-        cnta++;
-        jia--;
-    } else if (yh == jhan + yhan && jh != jhan + yhan) {
-        cntb++;
-        yi--;
+bool check(char ch, int i) {
+    if (i == 0) {
+        if (ch >= '1' && ch <= '9') {
+            return true;
+        } else {
+            return false;
+        }
+    } else {
+        if (ch >= '0' && ch <= '9') {
+            return true;
+        } else {
+            return false;
+        }
     }
 }
 int main() {
-    cin >> jia >> yi;
-    cin >> n;
-    while (n--) {
-        cin >> jhan >> jh >> yhan >> yh;
-        check();
-        if (jia < 0 || yi < 0) {
-            break;
+    cin >> A >> B;
+    for (int i = 0; i < A.size(); i++) {
+        if (check(A[i], i)) {
+            continue;
+        } else {
+            Aiswrong = true;
         }
     }
 
-    // cout << "cnta = " << cnta << endl;
-    // cout << "cntb = " << cntb << endl;
-    if (jia < 0) {
-        cout << "A" << endl;
-        cout << cntb;
+    for (int i = 0; i < B.size(); i++) {
+        if (check(B[i], i)) {
+            continue;
+        } else {
+            Biswrong = true;
+        }
+    }
+    if (!Aiswrong) {
+        for (int i = 0; i < A.size(); i++) {
+            numA *= 10;
+            numA += A[i] - '0';
+        }
+        if (numA > 1000) {
+            Aiswrong = true;
+        }
+    }
+    if (!Biswrong) {
+        for (int i = 0; i < B.size(); i++) {
+            numB *= 10;
+            numB += B[i] - '0';
+        }
+        if (numB > 1000) {
+            Biswrong = true;
+        }
+    }
+
+    if (Aiswrong == false) {
+        cout << A << " + ";
     } else {
-        cout << "B" << endl;
-        cout << cnta;
+        cout << "? + ";
+    }
+
+    if (Biswrong == false) {
+        cout << B << " ";
+    } else {
+        cout << "? ";
+    }
+
+    cout << "= ";
+
+    if (Aiswrong || Biswrong) {
+        cout << "?";
+    } else {
+
+        cout << numA + numB;
     }
 
     return 0;
