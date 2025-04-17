@@ -8,5 +8,19 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int main() { return 0; }
+const int N = 60;
+int n;
+int sex[N];
+string name[N];
+
+int main() {
+    cin >> n;
+    for (int i = 1; i <= n; i++) {
+        cin >> sex[i] >> name[i];
+    }
+    for (int i = 1; i <= n; i++) {
+    }
+
+    return 0;
+}
 // @pintia code=end
