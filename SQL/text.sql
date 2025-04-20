@@ -1,32 +1,14 @@
-CREATE DATABASE egg;
-
-USE egg;
-CREATE TABLE eggs_record (
+CREATE TABLE nowcoder_tbl(
     id INT PRIMARY KEY AUTO_INCREMENT,
-    egg_name VARCHAR(10) NOT NULL,
-    sold DATE NULL
-);
+    nowcoder_title VARCHAR(255),
+    nowcoder_author VARCHAR(255),
+    submission_date DATE
+)
 
-INSERT INTO egg.eggs_record (id, egg_name, sold)
-VALUES (1, '鸡蛋', '2021-01-01');
+INSERT INTO nowcoder_tbl(nowcoder_title, nowcoder_author, submission_date)
+VALUES("学习 PHP", "牛客教程", NOW());
 
-INSERT INTO egg.eggs_record (id, egg_name, sold)
-VALUES (2, '鸭蛋', '2021-02-01');
+INSERT INTO nowcoder_tbl(nowcoder_title, nowcoder_author, submission_date)
+VALUES("text", "marlin_phone", NOW());
 
-
-INSERT INTO egg.eggs_record (id, egg_name, sold)
-VALUES (3, '荷包蛋', '2025-04-14');
-
-INSERT INTO egg.eggs_record
-VALUES (DEFAULT, '鹅蛋', '2021-05-01');
-
-DELETE FROM egg.eggs_record
-WHERE id = 19;
-
-UPDATE egg.eggs_record
-SET sold = '999-6-1'
-WHERE id = 20;
-
-SELECT * FROM egg.eggs_record;
-
-SELECT * FROM egg.eggs_record;
+SELECT * FROM nowcoder_tbl WHERE nowcoder_author = "marlin_phone" OR id = 1;
