@@ -5,10 +5,12 @@ CREATE TABLE nowcoder_tbl(
     submission_date DATE
 )
 
-INSERT INTO nowcoder_tbl(nowcoder_title, nowcoder_author, submission_date)
-VALUES("学习 PHP", "牛客教程", NOW());
-
-INSERT INTO nowcoder_tbl(nowcoder_title, nowcoder_author, submission_date)
-VALUES("text", "marlin_phone", NOW());
-
 SELECT * FROM nowcoder_tbl WHERE nowcoder_author = "marlin_phone" OR id = 1;
+
+update nowcoder_tbl 
+set nowcoder_title = '学习 PHP'
+where id = 1;
+
+select * 
+FROM nowcoder_tbl
+WHERE nowcoder_title LIKE ''
