@@ -6,8 +6,11 @@
  */
 
 /** @nc code=start */
-SELECT gender, university, user_num, avg_active_day, avg_question_cnt
-FROM
+SELECT 
+    gender, university, COUNT(gender) AS user_num, AVG(active_days_within_30) AS avg_active_day, AVG(question_cnt) AS avg_question_cnt
+FROM user_profile
+GROUP BY university, gender
+ORDER BY gender ASC, university ASC;
 
 
 /** @nc code=end */
