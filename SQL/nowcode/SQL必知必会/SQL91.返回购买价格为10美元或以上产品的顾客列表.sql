@@ -6,7 +6,9 @@
  */
 
 /** @nc code=start */
-
-
+SELECT cust_id
+FROM OrderItems, Orders
+WHERE OrderItems.order_num = Orders.order_num
+AND OrderItems.item_price >= 10;
 
 /** @nc code=end */
