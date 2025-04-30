@@ -150,13 +150,36 @@ FROM work_with;
 
 INSERT INTO branch VALUES (4, '偷懒', NULL);
 
-SELECT * 
+SELECT emp_id, name, branch_name
 FROM employee
 JOIN branch
 ON emp_id = manager_id;
 
 SELECT employee.emp_id, employee.name, branch.branch_name
-FROM employee LEFT JOIN branch
+FROM employee 
+RIGHT JOIN branch
 ON employee.emp_id = branch.manager_id;
 
-SELECT 
+-- subquery 子查询 -------------------------------------------------------------------------------
+
+SELECT name
+FROM employee
+WHERE emp_id = (
+    SELECT manager_id
+    FROM branch
+    WHERE branch_name = '研发'
+);
+
+SELECT name
+FROM employee
+where emp_id IN(
+    SELECT emp_id
+    FROM work_with 
+    WHERE total_sales > 50000
+);
+
+-- on delete--------------------------------------------------------------------------
+on delete set NULL 
+-- 当删除父表中的记录时，子表中相应的记录也会被删除。
+
+USE sql_tutorial;
