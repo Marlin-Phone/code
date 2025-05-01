@@ -1,0 +1,1 @@
+{"name":"Luogu - P3370","url":"https://www.luogu.com.cn/problem/P3370","memoryLimit":131072,"timeLimit":1000,"tests":[{"id":1746080529547,"input":"5\nabc\naaaa\nabc\nabcc\n12345","output":"4"}],"group":"luogu","srcPath":"d:\\code\\cpp\\luogu\\Luogu_P_3370.cpp"}
