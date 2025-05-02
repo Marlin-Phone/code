@@ -1,0 +1,1 @@
+{"name":"Luogu - P1305","url":"https://www.luogu.com.cn/problem/P1305","memoryLimit":128000,"timeLimit":1000,"tests":[{"id":1746183103952,"input":"6\nabc\nbdi\ncj*\nd**\ni**\nj**","output":"abdicj"}],"group":"luogu","srcPath":"d:\\code\\cpp\\luogu\\Luogu_P_1305.cpp"}

@@ -5,9 +5,8 @@ using namespace std;
 #define endl '\n'
 // #define int long long
 
-const int N = 1024;
+// const int N =
 int n;
-int nums[N];
 
 signed main() {
     ios::sync_with_stdio(0);
@@ -15,9 +14,6 @@ signed main() {
     cout.tie(0);
 
     cin >> n;
-    for (int i = 1; i <= n; i++) {
-        cin >> nums[i];
-    }
 
     return 0;
 }
