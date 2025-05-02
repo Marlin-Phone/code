@@ -1,0 +1,1 @@
+{"name":"Local: P10429","url":"d:\\code\\P10429.cpp","tests":[{"id":1746118835562,"input":"5\n10 9 8 12 14\n","output":"1"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\code\\P10429.cpp","group":"local","local":true}
