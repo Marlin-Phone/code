@@ -1,0 +1,1 @@
+{"name":"Local: 归并分治","url":"d:\\code\\cpp\\左程云算法\\归并分治.cpp","tests":[{"id":1746545881835,"input":"6\n1 3 5 2 4 6","output":"27"},{"id":1746545885679,"input":"1\n1","output":"0"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\code\\cpp\\左程云算法\\归并分治.cpp","group":"local","local":true}
