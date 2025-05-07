@@ -6,13 +6,6 @@ int n;
 int arr[N];
 int help[N];
 
-int smallSum(int l, int r) {
-    if (l == r) {
-        return 0;
-    }
-    int m = (l + r) / 2;
-    return smallSum(l, m) + smallSum(m + 1, r) + merge(l, m, r);
-}
 int merge(int l, int m, int r) {
     // 统计部分
     int ans = 0;
@@ -22,7 +15,7 @@ int merge(int l, int m, int r) {
         }
         ans += sum;
     }
-    // 正常marge
+    // 正常归并
     int i = l;
     int a = l;
     int b = m + 1;
@@ -45,26 +38,23 @@ int merge(int l, int m, int r) {
 
     return ans;
 }
-void smallmerge(int l, int r) {
-    if (l >= r) {
-        return;
+
+int smallSum(int l, int r) {
+    if (l == r) {
+        return 0;
     }
     int m = (l + r) / 2;
-    smallmerge(l, m);
-    smallmerge(m + 1, r);
-    merge(l, m, r);
+    return smallSum(l, m) + smallSum(m + 1, r) + merge(l, m, r);
 }
+
 int main() {
     cin >> n;
     for (int i = 0; i < n; i++) {
         cin >> arr[i];
     }
 
-    smallSum(0, n - 1);
-
-    for (int i = 0; i < n; i++) {
-        cout << arr[i] << " ";
-    }
+    int result = smallSum(0, n - 1); // 保存smallSum的返回值
+    cout << result << endl;          // 输出结果
 
     return 0;
 }

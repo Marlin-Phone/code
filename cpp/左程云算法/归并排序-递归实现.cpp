@@ -3,13 +3,15 @@ using namespace std;
 
 const int N = 1e5 + 10;
 int n;
-int arr[N];  // 待排序数组
-int help[N]; // 辅助数组
+int arr[N];
+int help[N];
 
-void merge(int l, int m, int r) { // 归并过程
-    int i = l;
-    int a = l;
-    int b = m + 1;
+void merge(int l, int r) {
+    if (l >= r) {
+        return;
+    }
+    int m = (l + r) / 2;
+    int i = l, a = l, b = m + 1;
     while (a <= m && b <= r) {
         if (arr[a] <= arr[b]) {
             help[i++] = arr[a++];
@@ -27,18 +29,16 @@ void merge(int l, int m, int r) { // 归并过程
         arr[i] = help[i];
     }
 }
-
-void mergeSort1(int l, int r) { // 递归实现
+void mergeSort1(int l, int r) {
     if (l >= r) {
         return;
     }
     int m = (l + r) / 2;
     mergeSort1(l, m);
     mergeSort1(m + 1, r);
-    merge(l, m, r);
+    merge(l, r);
 }
-
-int main() { // 主函数
+int main() {
     cin >> n;
     for (int i = 0; i < n; i++) {
         cin >> arr[i];
