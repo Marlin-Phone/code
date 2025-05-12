@@ -1,0 +1,1 @@
+{"name":"Luogu - CF750A","url":"https://www.luogu.com.cn/problem/CF750A","memoryLimit":256000,"timeLimit":1000,"tests":[{"input":"3 222\n","output":"2\n","id":1747051492751},{"input":"4 190\n","output":"4\n","id":1747051492752},{"id":1747051492753,"input":"7 1\n","output":"7\n"}],"group":"luogu","srcPath":"d:\\code\\Luogu_CF_750_A.cpp"}
