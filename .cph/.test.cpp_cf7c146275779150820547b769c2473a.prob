@@ -1,0 +1,1 @@
+{"name":"Local: test","url":"d:\\code\\test.cpp","tests":[{"id":1747105244656,"input":"114514, 123, 12312, 3242","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\code\\test.cpp","group":"local","local":true}
