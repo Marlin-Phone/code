@@ -2,26 +2,31 @@
 using namespace std;
 
 string str;
+vector<string> ans;
 
 int main() {
     getline(cin, str);
-    // 字符串分割实现
-    replace(str.begin(), str.end(), ", ", "#");
-
-    cout << str;
-
-    vector<string> tokens;
-    istringstream iss(str);
-    string token;
-
-    while (getline(iss, token, ", ")) {
-        if (!token.empty()) {
-            tokens.push_back(token);
-        }
+    if (str.empty()) {
+        return 0;
     }
 
-    for (int i = 0; i < tokens.size(); i++) {
-        cout << tokens[i] << endl;
+    size_t start = 0;
+
+    for (size_t i = 0; i < str.size();) {
+        if (str[i] == ',' || str[i] == ' ') {
+            if (i > start) {
+                ans.push_back(str.substr(start, i - start));
+            }
+            start = i + 1;
+        }
+        i++;
+    }
+    if (start < str.size()) {
+        ans.push_back(str.substr(start));
+    }
+
+    for (int i = 0; i < ans.size(); i++) {
+        cout << ans[i] << endl;
     }
 
     return 0;
