@@ -1,10 +1,3 @@
-/*
- * @lc app=leetcode.cn id=297 lang=cpp
- *
- * [297] 二叉树的序列化与反序列化
- */
-
-// @lc code=start
 /**
  * Definition for a binary tree node.
  * struct TreeNode {
@@ -16,53 +9,49 @@
  */
 class Codec {
   public:
-    void f(TreeNode *root, string &builder) {
+    string ans;
+    int idx = 0;
+
+    void f(TreeNode *root) {
         if (root == nullptr) {
-            builder += "#,";
-        } else {
-            builder += to_string(root->val);
-            builder += ',';
-            f(root->left, builder);
-            f(root->right, builder);
+            ans += "null,";
+            return;
         }
+        ans += to_string(root->val) + ",";
+        f(root->left);
+        f(root->right);
     }
     // Encodes a tree to a single string.
     string serialize(TreeNode *root) {
-        string builder;
-        f(root, builder);
-        if (!builder.empty()) {
-            builder.pop_back();
-        }
-        return builder;
+        f(root);
+        ans.pop_back();
+        return ans;
     }
 
-    TreeNode *g(vector<string> &nodes, int &index) {
-        if (index >= nodes.size() || nodes[index] == "#") {
-            index++;
+    TreeNode *p(vector<string> &tokens) {
+        string temp = tokens[idx++];
+        if (temp == "null") {
             return nullptr;
         }
-        TreeNode *node = new TreeNode(stoi(nodes[index]));
-        index++;
-
-        node->left = g(nodes, index);
-        node->right = g(nodes, index);
-
-        return node;
+        TreeNode *head = new TreeNode(stoi(temp));
+        head->left = p(tokens);
+        head->right = p(tokens);
+        return head;
     }
     // Decodes your encoded data to tree.
     TreeNode *deserialize(string data) {
-        vector<string> nodes;
-        stringstream ss(data);
+        TreeNode *head;
+        vector<string> tokens;
         string token;
-        while (getline(ss, token, ',')) {
-            nodes.push_back(token);
+        istringstream iss(data);
+        while (getline(iss, token, ',')) {
+            tokens.push_back(token);
         }
-        int index = 0;
-        return g(nodes, index);
+        head = p(tokens);
+        return head;
     }
 };
 
 // Your Codec object will be instantiated and called as such:
 // Codec ser, deser;
 // TreeNode* ans = deser.deserialize(ser.serialize(root));
-// @lc code=end
