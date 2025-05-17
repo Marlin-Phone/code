@@ -3,7 +3,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 #define endl '\n'
-// #define int long long
+#define int long long
 
 // const int N =
 int T = 1;
