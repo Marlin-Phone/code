@@ -22,8 +22,11 @@ signed main() {
         S[i] = S[i - 1] + A[i];
     }
 
-    for (int i = n; i >= 1; i--) {
-        s += A[i] * (S[i - 1]);
+    // for (int i = n; i >= 1; i--) {
+    //     s += A[i] * (S[i - 1]);
+    // }
+    for (int i = 1; i <= n - 1; i++) {
+        s += A[i] * (S[n] - S[i]);
     }
 
     cout << s;
