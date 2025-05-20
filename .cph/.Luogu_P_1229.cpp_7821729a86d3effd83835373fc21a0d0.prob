@@ -1,0 +1,1 @@
+{"name":"Luogu - P1229","url":"https://www.luogu.com.cn/problem/P1229","memoryLimit":128000,"timeLimit":1000,"tests":[{"id":1747738888074,"input":"abc                           \ncba\n","output":"4"}],"group":"luogu","srcPath":"d:\\code\\Luogu_P_1229.cpp"}

@@ -1,0 +1,1 @@
+{"name":"Luogu - B3642","url":"https://www.luogu.com.cn/problem/B3642","memoryLimit":131072,"timeLimit":1000,"tests":[{"id":1747737431767,"input":"7\n2 7\n4 0\n0 0\n0 3\n0 0\n0 5\n6 0","output":"1 2 4 3 7 6 5\n4 3 2 1 6 5 7\n3 4 2 5 6 7 1 "}],"group":"luogu","srcPath":"d:\\code\\Luogu_B_3642.cpp"}
