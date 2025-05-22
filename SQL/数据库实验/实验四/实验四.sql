@@ -13,23 +13,29 @@ GROUP BY 课程号;
 
 -- b.在XS_KC表中统计每个学生的选修课程的门数，并显示总学分
 -- 假设需要查询每个学生的学号、选修课程门数、总学分
-SELECT 
-    学号, 
-    COUNT(课程号) AS 选修课程门数,
-    SUM(
-        (SELECT 学分 
-         FROM kc 
-         WHERE kc.课程号 = xs_kc.课程号)
-    ) AS 总学分
-FROM 
-    xs_kc
-GROUP BY 
-    学号;
+SELECT 学号, COUNT(课程号) AS 选修课程门数, SUM(学分) AS 总学分
+FROM XS_KC
+GROUP BY 学号;
 
 -- c.统计XSQK表中各专业学生总学分，并显示详细信息
 -- 先通过连接xs_kc和xsqk表，再按专业分组计算总学分
+SELECT xsqk.专业名, SUM(
+    (
+        SELECT 学分
+        FROM kc
+        WHERE kc.课程号 = xs_kc.课程号
+    )
+) AS 总学分
+FROM xsqk
+JOIN xs_kc ON xsqk.学号 = xs_kc.学号
+GROUP BY xsqk.专业名;
+
+SELECT *
+FROM xsqk
+JOIN xs_kc ON xsqk.学号 = xs_kc.学号;
+
 SELECT 
-    xsqk.专业,
+    xsqk.专业名,
     SUM(
         (SELECT 学分 
          FROM kc 
@@ -40,7 +46,7 @@ FROM
 JOIN 
     xs_kc ON xsqk.学号 = xs_kc.学号
 GROUP BY 
-    xsqk.专业;
+    xsqk.专业名;
 
 -- d.按开课学期统计KC表中各学期的学分，并显示明细信息
 SELECT 
