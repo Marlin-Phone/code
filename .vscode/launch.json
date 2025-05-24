@@ -5,6 +5,41 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "type": "java",
+            "name": "lab5",
+            "request": "launch",
+            "mainClass": "java实验.lab5",
+            "projectName": "code_72e5cfe6"
+        },
+        {
+            "type": "java",
+            "name": "lab4",
+            "request": "launch",
+            "mainClass": "java实验.lab4",
+            "projectName": "code_72e5cfe6"
+        },
+        {
+            "type": "java",
+            "name": "lab3",
+            "request": "launch",
+            "mainClass": "java实验.lab3",
+            "projectName": "code_72e5cfe6"
+        },
+        {
+            "type": "java",
+            "name": "lab2",
+            "request": "launch",
+            "mainClass": "java实验.lab2",
+            "projectName": "code_72e5cfe6"
+        },
+        {
+            "type": "java",
+            "name": "lab1",
+            "request": "launch",
+            "mainClass": "java实验.lab1",
+            "projectName": "code_72e5cfe6"
+        },
+        {
             "name": "(Windows) 启动",
             "type": "cppvsdbg",
             "request": "launch",
@@ -15,6 +50,5 @@
             "environment": [],
             "console": "externalTerminal"
         }
-
     ]
 }
