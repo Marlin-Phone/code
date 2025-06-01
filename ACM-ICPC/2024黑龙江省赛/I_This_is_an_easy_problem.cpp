@@ -9,9 +9,19 @@ using namespace std;
 // const int N =
 int T = 1;
 int n;
+int ans = 0;
 
 void solve() {
-    // cin >> n;
+    cin >> n;
+    while (n != 0) {
+        int temp = n % 2;
+        if (temp == 1) {
+            ans++;
+        }
+        n /= 2;
+    }
+
+    cout << ans;
 }
 
 signed main() {
