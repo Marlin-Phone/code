@@ -57,9 +57,13 @@ void solve() {
     for (int i = 0; i < m; i++) {
         int uu, vv;
         cin >> uu >> vv;
-        s.push_back({uu, vv});
+        s.push_back({uu, vv}); // 为了排序,先存入vector
     }
-    sort(s.begin(), s.end(), cmp);
+    sort(s.begin(), s.end(), cmp); // 排序,从小到大
+    for (int i = 0; i < m; i++) {
+        cout << s[i].u << " " << s[i].v << endl;
+    }
+
     for (int i = 0; i < m; i++) {
         e[s[i].u].push_back(i);
         // (i号边的起点s[i].u连接的边的数组)中存入i号边
