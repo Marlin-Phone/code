@@ -1,0 +1,1 @@
+{"name":"Luogu - P8605","url":"https://www.luogu.com.cn/problem/P8605","memoryLimit":65536,"timeLimit":1000,"tests":[{"input":"3 3\n1 2\n2 3\n1 3","output":"6","id":1748955102363},{"id":1748955102364,"input":"4 4\n1 2\n2 3\n3 1\n1 4","output":"10"}],"group":"luogu","srcPath":"d:\\code\\Luogu_P_8605.cpp"}
