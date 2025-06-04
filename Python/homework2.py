@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from IPython.display import display, Markdown
 import matplotlib as mpl
-%matplotlib inline
+# %matplotlib inline
 
 # 设置全局样式 - 解决中文字符显示问题
 plt.rcParams['font.sans-serif'] = ['SimHei']  # 用来正常显示中文标签
@@ -56,6 +56,7 @@ except FileNotFoundError:
         'LSTAT': np.random.uniform(1, 40, 10),
         'MEDV': np.random.randint(50, 500, 10)
     }
+    
     df = pd.DataFrame(data)
     display(Markdown("已创建示例数据集用于演示目的。"))
 
