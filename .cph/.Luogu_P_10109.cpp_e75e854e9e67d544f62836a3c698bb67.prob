@@ -1,0 +1,1 @@
+{"name":"Luogu - P10109","url":"https://www.luogu.com.cn/problem/P10109","memoryLimit":524288,"timeLimit":1000,"tests":[{"input":"5\n0 0 2 2\n3\n2 3 4\n3 2 3 4\n2 1 4","output":"2\n2\n0","id":1749200048661},{"id":1749200048662,"input":"7\n0 1 0 2 1 2\n5\n2 4 6\n2 4 5\n3 4 5 6\n4 2 4 5 6\n2 3 4","output":"2\n1\n1\n1\n0"}],"group":"luogu","srcPath":"d:\\code\\Luogu_P_10109.cpp"}

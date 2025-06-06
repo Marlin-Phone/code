@@ -1,15 +1,12 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-struct TreeNode {
-    int val;
-    TreeNode *left;
-    TreeNode *right;
-    TreeNode(int val) : val(val) {};
-};
-queue<>
+int n, m;
 
-    int main() {
-
-    return 0;
+int main() {
+    cin >> n >> m;
+    for (int i = 0; i < m; i++) {
+        int uu, vv;
+        cin >> uu >> vv;
+    }
 }

@@ -1,0 +1,1 @@
+{"name":"Luogu - B3862","url":"https://www.luogu.com.cn/problem/B3862","memoryLimit":524288,"timeLimit":2000,"tests":[{"id":1749202955918,"input":"4 3\n1 2\n2 4\n4 3","output":"4 4 3 4"}],"group":"luogu","srcPath":"d:\\code\\Luogu_B_3862.cpp"}

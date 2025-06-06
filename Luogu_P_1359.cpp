@@ -1,4 +1,4 @@
-// https://luogu.com.cn/problem/P9604
+// https://luogu.com.cn/problem/P
 //
 #include <bits/stdc++.h>
 using namespace std;

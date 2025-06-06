@@ -1,1 +1,1 @@
-{"name":"Luogu - P8604","url":"https://www.luogu.com.cn/problem/P8604","memoryLimit":131072,"timeLimit":1000,"tests":[{"id":1749125728270,"input":"7 6\n1 3\n2 3\n3 4\n3 5\n4 5\n5 6\n1 6","output":"2"}],"group":"luogu","srcPath":"d:\\code\\Luogu_P_8604.cpp"}
+{"name":"Luogu - P8604","url":"https://www.luogu.com.cn/problem/P8604","memoryLimit":131072,"timeLimit":1000,"tests":[{"id":1749198794443,"input":"7 6\n1 3\n2 3\n3 4\n3 5\n4 5\n5 6\n1 6","output":"2"}],"group":"luogu","srcPath":"d:\\code\\Luogu_P_8604.cpp"}
