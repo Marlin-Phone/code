@@ -1,0 +1,1 @@
+{"name":"Luogu - P2853","url":"https://www.luogu.com.cn/problem/P2853","memoryLimit":128000,"timeLimit":1000,"tests":[{"id":1749300259686,"input":"2 4 4\n2\n3\n1 2\n1 4\n2 3\n3 4","output":"2"}],"group":"luogu","srcPath":"d:\\code\\Luogu_P_2853.cpp"}
