@@ -1,0 +1,1 @@
+{"name":"Local: P5250","url":"d:\\code\\cpp\\luogu\\P5250\\P5250.cpp","tests":[{"id":1749918195951,"input":"7\n1 1\n1 5\n1 3\n2 3\n2 3\n2 3\n2 3","output":"3\n1\n5\nEmpty\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\code\\cpp\\luogu\\P5250\\P5250.cpp","group":"local","local":true}
