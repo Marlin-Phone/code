@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Test",
+            "request": "launch",
+            "mainClass": "Test",
+            "projectName": "code_72e5cfe6"
+        },
+        {
+            "type": "java",
             "name": "SeasonJudge",
             "request": "launch",
             "mainClass": "SeasonJudge",
