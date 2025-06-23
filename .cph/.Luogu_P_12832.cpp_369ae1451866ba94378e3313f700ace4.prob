@@ -1,1 +1,1 @@
-{"name":"Luogu - P12832","url":"https://www.luogu.com.cn/problem/P12832","memoryLimit":262144,"timeLimit":1000,"tests":[{"id":1750597814861,"input":"2\n3 2\n4 1","output":"2\n-1"}],"group":"luogu","srcPath":"d:\\code\\Luogu_P_12832.cpp"}
+{"name":"Luogu - P12832","url":"https://www.luogu.com.cn/problem/P12832","memoryLimit":262144,"timeLimit":1000,"tests":[{"id":1750661441549,"input":"2\n3 2\n4 1","output":"2\n-1"}],"group":"luogu","srcPath":"d:\\code\\Luogu_P_12832.cpp"}
