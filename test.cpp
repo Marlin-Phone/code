@@ -3,42 +3,44 @@ using namespace std;
 #define int long long
 #define debug(a) cout << #a << " = " << a << endl;
 
-const int N = 1e5 + 10;
-int num[N];
-int n;
-int st[N];
+signed main() {
+    int n;
+    cin >> n;
 
-void dfs(int x) {
-    if (x > n) {
-        for (int i = 1; i <= n; i++) {
-            if (st[i] == 1) {
-                cout << num[i] << " ";
+    vector<int> inDegree(n + 10, 0); // 记录每个结点的入度
+    queue<int> q;                    // 队列记录入度为0的结点
+    vector<int> topoSort;            // 拓扑排序结果
+    vector<int> g[n + 10];           // 邻接表
+
+    for (int i = 1; i <= n; i++) { // 建图并记录入度
+        int uu, vv;
+        cin >> uu >> vv;
+        g[uu].push_back(vv); // 建立邻接表
+        inDegree[vv]++;      // 记录每个结点的入度
+    }
+    for (int i = 1; i <= n; i++) { // 初始化入度为0的队列
+        if (inDegree[i] == 0) {
+            q.push(i); // 入度为0的结点入队列
+        }
+    }
+    while (!q.empty()) {
+        int u = q.front();
+        q.pop();
+        topoSort.push_back(u); // 拓扑排序结果
+        for (int v : g[u]) {
+            inDegree[v]--; // 减少每个邻接点的入度
+            if (inDegree[v] == 0) {
+                q.push(v); // 入度为0的邻接点入队列
             }
         }
-        cout << endl;
-        return;
     }
-
-    st[x] = 1;
-    dfs(x + 1);
-
-    st[x] = 0;
-    dfs(x + 1);
-}
-void solve() {
-    cin >> n;
-    for (int i = 1; i <= n; i++) {
-        cin >> num[i];
+    if (topoSort.size() == n) { // 判断是否有环
+        cout << "No" << endl;   // 无环
+    } else {
+        cout << "Yes" << endl; // 有环
     }
-    dfs(1);
-
-    return;
-}
-signed main() {
-    ios::sync_with_stdio(0);
-    cin.tie(0);
-    cout.tie(0);
-    solve();
-
+    for (int u : topoSort) {
+        cout << u << " "; // 输出拓扑排序结果
+    }
     return 0;
 }

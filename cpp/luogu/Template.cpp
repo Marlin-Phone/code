@@ -3,7 +3,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 #define endl '\n'
-#define debug(a) cout << #a << " = " << endl;
+#define debug(a) cout << #a << " = " << a << endl;
 // #define int long long
 
 // const int N =
