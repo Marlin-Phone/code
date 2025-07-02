@@ -1,0 +1,1 @@
+{"name":"Luogu - P1807","url":"https://www.luogu.com.cn/problem/P1807","memoryLimit":131072,"timeLimit":1000,"tests":[{"id":1751458587076,"input":"2 1\n1 2 1","output":"1"},{"id":1751462176639,"input":"5 5\n1 2 1\n1 3 2\n2 4 3\n3 4 4\n4 5 6","output":"12"}],"group":"luogu","srcPath":"d:\\code\\Luogu_P_1807.cpp"}
