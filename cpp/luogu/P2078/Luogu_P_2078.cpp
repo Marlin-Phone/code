@@ -1,5 +1,5 @@
 // https://luogu.com.cn/problem/P2078
-//
+// 并查集
 #include <bits/stdc++.h>
 using namespace std;
 #define endl '\n'
@@ -14,7 +14,7 @@ int cnt = 0;
 // 并查集-------------------------------
 vector<int> arr(N);
 void init(int n) {
-    cnt = 1;
+    cnt = 0;
     for (int i = 1; i <= n; i++) {
         arr[i] = i;
     }
@@ -31,7 +31,6 @@ void merge(int a, int b) {
         int aHead = findHead(a);
         int bHead = findHead(b);
         arr[aHead] = bHead;
-        cnt++;
     }
 }
 // ------------------------------------
@@ -44,6 +43,11 @@ void solve() {
         cin >> x1 >> y1;
         merge(x1, y1);
     }
+    for (int i = 1; i <= n; i++) {
+        if (test(1, i)) {
+            cnt++;
+        }
+    }
     int mincnt = cnt;
     // debug(cnt);
     init(m);
@@ -52,6 +56,11 @@ void solve() {
         cin >> x1 >> y1;
         x1 = -x1, y1 = -y1;
         merge(x1, y1);
+    }
+    for (int i = 1; i <= m; i++) {
+        if (test(1, i)) {
+            cnt++;
+        }
     }
     // debug(cnt);
     mincnt = min(mincnt, cnt);
