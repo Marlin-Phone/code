@@ -1,5 +1,5 @@
 // https://luogu.com.cn/problem/P3366
-//
+// 最小生成树 prim
 #include <bits/stdc++.h>
 using namespace std;
 #define endl '\n'
@@ -9,44 +9,51 @@ using namespace std;
 const int N = 5e3 + 10;
 int T = 1;
 int n, m;
-struct g {
-    int u, v, w;
-} g[N];
-vector<int> arr(N);
-int cnt = 0;
+int st[N];
+struct Compare {
+    bool operator()(pair<int, int> a, pair<int, int> b) {
+        return a.second > b.second;
+    }
+};
+priority_queue<pair<int, int>, vector<pair<int, int>>, Compare> heap;
+vector<pair<int, int>> g[N];
 
-bool cmp(struct g a, struct g b) { return a.w < b.w; }
-// ------------------------
-void init(int n) {
-    for (int i = 1; i <= n; i++) {
-        arr[i] = i;
+void prim() {
+    for (auto it : g[1]) {
+        heap.push(it);
+    }
+    st[1] = 1;
+    int ans = 0;
+    int nodecnt = 1;
+    while (!heap.empty()) {
+        pair<int, int> edge = heap.top();
+        heap.pop();
+        int next = edge.first;
+        int cost = edge.second;
+        if (!st[next]) {
+            nodecnt++;
+            st[next] = true;
+            ans += cost;
+            for (auto e : g[next]) {
+                heap.push(e);
+            }
+        }
+    }
+    if (nodecnt == n) {
+        cout << ans;
+    } else {
+        cout << "orz";
     }
 }
-int findHead(int x) {
-    if (arr[x] != x) {
-        arr[x] = findHead(arr[x]);
-    }
-    return arr[x];
-}
-bool test(int a, int b) { return findHead(a) == findHead(b); }
-void merge(int a, int b) {
-    if (test(a, b)) {
-        return;
-    }
-    int aHead = findHead(a);
-    int bHead = findHead(b);
-    arr[aHead] = bHead;
-}
-// ------------------------
-
-void kruscal() { sort(g + 1, g + 1 + n, cmp); }
-
 void solve() {
     cin >> n >> m;
-    for (int i = 1; i <= m; i++) {
-        cin >> g[i].u >> g[i].v >> g[i].w;
+    while (m--) {
+        int u, v, w;
+        cin >> u >> v >> w;
+        g[u].push_back({v, w});
+        g[v].push_back({u, w});
     }
-    init();
+    prim();
 }
 
 signed main() {
