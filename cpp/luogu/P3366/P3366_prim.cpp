@@ -1,5 +1,5 @@
 // https://luogu.com.cn/problem/P3366
-// 最小生成树 prim
+// 最小生成树 prim 堆 优先队列
 #include <bits/stdc++.h>
 using namespace std;
 #define endl '\n'
@@ -9,14 +9,14 @@ using namespace std;
 const int N = 5e3 + 10;
 int T = 1;
 int n, m;
-int st[N];
+vector<pair<int, int>> g[N];
 struct Compare {
     bool operator()(pair<int, int> a, pair<int, int> b) {
         return a.second > b.second;
     }
 };
 priority_queue<pair<int, int>, vector<pair<int, int>>, Compare> heap;
-vector<pair<int, int>> g[N];
+int st[N];
 
 void prim() {
     for (auto it : g[1]) {
@@ -24,22 +24,21 @@ void prim() {
     }
     st[1] = 1;
     int ans = 0;
-    int nodecnt = 1;
+    int nodeCnt = 1;
     while (!heap.empty()) {
-        pair<int, int> edge = heap.top();
+        int v = heap.top().first;
+        int w = heap.top().second;
         heap.pop();
-        int next = edge.first;
-        int cost = edge.second;
-        if (!st[next]) {
-            nodecnt++;
-            st[next] = true;
-            ans += cost;
-            for (auto e : g[next]) {
-                heap.push(e);
+        if (!st[v]) {
+            nodeCnt++;
+            st[v] = 1;
+            ans += w;
+            for (auto it : g[v]) {
+                heap.push(it);
             }
         }
     }
-    if (nodecnt == n) {
+    if (nodeCnt == n) {
         cout << ans;
     } else {
         cout << "orz";

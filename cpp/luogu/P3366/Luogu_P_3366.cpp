@@ -1,5 +1,5 @@
 // https://luogu.com.cn/problem/P3366
-// 最小生成树 kruskal prim 并查集 优先队列
+// 最小生成树 kruskal 并查集
 #include <bits/stdc++.h>
 using namespace std;
 #define endl '\n'
