@@ -1,0 +1,1 @@
+{"name":"Luogu - B3616","url":"https://www.luogu.com.cn/problem/B3616","memoryLimit":131072,"timeLimit":1000,"tests":[{"id":1751988149830,"input":"13\n1 2\n3\n4\n1 233\n3\n2\n3\n2\n4\n3\n2\n1 144\n3","output":"2\n1\n2\n233\n0\nERR_CANNOT_QUERY\nERR_CANNOT_POP\n144"}],"group":"luogu","srcPath":"d:\\code\\Luogu_B_3616.cpp"}
