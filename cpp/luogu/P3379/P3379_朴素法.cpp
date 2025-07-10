@@ -9,47 +9,46 @@ using namespace std;
 const int N = 5e5 + 10;
 int T = 1;
 int n, m, s;
-int depth[N];
-int parent[N];
 vector<int> g[N];
-queue<int> q;
+queue<int> que;
+int parent[N];
+int deepth[N];
 int visited[N];
 
 void bfs(int root) {
-    q.push(root);
-    depth[root] = 1;
+    que.push(root);
+    deepth[root] = 1;
     parent[root] = 0;
-    while (!q.empty()) {
-        int size = q.size();
-        for (int i = 1; i <= size; i++) {
-            auto u = q.front();
-            visited[u] = 1;
-            q.pop();
-            for (auto v : g[u]) {
-                if (visited[v] == 1) {
-                    continue;
-                }
-                q.push(v);
-                parent[v] = u;
-                depth[v] = depth[u] + 1;
+    visited[root] = 1;
+    while (!que.empty()) {
+        auto u = que.front();
+        que.pop();
+        for (auto v : g[u]) {
+            if (visited[v]) {
+                continue;
             }
+            deepth[v] = deepth[u] + 1;
+            parent[v] = u;
+            visited[v] = 1;
+            que.push(v);
         }
     }
 }
+
 int getLCA(int a, int b) {
-    while (depth[a] > depth[b]) {
+    while (deepth[a] > deepth[b]) {
         a = parent[a];
     }
-    while (depth[b] > depth[a]) {
+    while (deepth[a] < deepth[b]) {
         b = parent[b];
     }
-
     while (a != b) {
         a = parent[a];
         b = parent[b];
     }
     return a;
 }
+
 void solve() {
     cin >> n >> m >> s;
     for (int i = 1; i < n; i++) {
@@ -59,8 +58,7 @@ void solve() {
         g[v].push_back(u);
     }
     bfs(s);
-
-    while (m--) {
+    for (int i = 1; i <= m; i++) {
         int a, b;
         cin >> a >> b;
         cout << getLCA(a, b) << endl;
