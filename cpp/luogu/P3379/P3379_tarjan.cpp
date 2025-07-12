@@ -11,7 +11,8 @@ int T = 1;
 int n, m, s;
 vector<int> g[N];
 vector<pair<int, int>> queries[N];
-int ans[N], parent[N];
+int ans[N];
+// int  parent[N];
 bool vis[N];
 
 // 并查集---------------------------------
@@ -35,8 +36,8 @@ void merge(int a, int b) { // 把a合并入b
 }
 // --------------------------------------
 void tarjan(int u, int fa) {
-    parent[u] = fa; // ① 记录父节点关系
-    vis[u] = true;  // ② 标记已访问
+    // parent[u] = fa; // ① 记录父节点关系
+    vis[u] = true; // ② 标记已访问
 
     // ③ 深度优先遍历子树
     for (int v : g[u]) {
@@ -47,7 +48,9 @@ void tarjan(int u, int fa) {
     }
 
     // ⑥ 处理当前节点的所有查询
-    for (auto [v, id] : queries[u]) {
+    for (auto t : queries[u]) {
+        int v = t.first;
+        int id = t.second;
         if (vis[v]) {              // ⑦ 仅当对方节点已访问时处理
             ans[id] = findHead(v); // ⑧ 通过并查集获取LCA
         }

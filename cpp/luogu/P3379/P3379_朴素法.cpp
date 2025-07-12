@@ -10,45 +10,45 @@ const int N = 5e5 + 10;
 int T = 1;
 int n, m, s;
 vector<int> g[N];
-queue<int> que;
-int parent[N];
-int deepth[N];
-int visited[N];
+queue<int> q;
+int fa[N];
+int dep[N];
+int vis[N];
 
+// 预处理O(n)
 void bfs(int root) {
-    que.push(root);
-    deepth[root] = 1;
-    parent[root] = 0;
-    visited[root] = 1;
-    while (!que.empty()) {
-        auto u = que.front();
-        que.pop();
-        for (auto v : g[u]) {
-            if (visited[v]) {
+    q.push(root);
+    vis[root] = true; // 记录当前节点已访问
+    dep[root] = 0;    // 记录当前节点的深度
+    fa[root] = -1;    // 记录当前节点的父节点
+    while (!q.empty()) {
+        int u = q.front();
+        q.pop();
+        for (int v : g[u]) {
+            if (vis[v]) {
                 continue;
             }
-            deepth[v] = deepth[u] + 1;
-            parent[v] = u;
-            visited[v] = 1;
-            que.push(v);
+            vis[v] = true;
+            dep[v] = dep[u] + 1;
+            fa[v] = u;
+            q.push(v);
         }
     }
 }
-
-int getLCA(int a, int b) {
-    while (deepth[a] > deepth[b]) {
-        a = parent[a];
+// 查询O(m * h)
+int lca(int a, int b) {
+    while (dep[a] > dep[b]) {
+        a = fa[a];
     }
-    while (deepth[a] < deepth[b]) {
-        b = parent[b];
+    while (dep[b] > dep[a]) {
+        b = fa[b];
     }
     while (a != b) {
-        a = parent[a];
-        b = parent[b];
+        a = fa[a];
+        b = fa[b];
     }
     return a;
 }
-
 void solve() {
     cin >> n >> m >> s;
     for (int i = 1; i < n; i++) {
@@ -61,7 +61,7 @@ void solve() {
     for (int i = 1; i <= m; i++) {
         int a, b;
         cin >> a >> b;
-        cout << getLCA(a, b) << endl;
+        cout << lca(a, b) << endl;
     }
 }
 
