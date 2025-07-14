@@ -1,68 +1,124 @@
-#include <algorithm>
-#include <iostream>
-#include <string>
-#include <vector>
+// https://luogu.com.cn/problem/P
+//
+#include <bits/stdc++.h>
 using namespace std;
-typedef long long ll;
+#define endl '\n'
+#define debug(a) cout << #a << " = " << a << endl;
+#define int long long
 
-int main() {
-    ll A, N;
-    cin >> A >> N;
-    string n_str = to_string(N);
-    int len_max = n_str.size();
+// const int N =
+int T = 1;
+int a; // A进制
+int n; // 最大为n
 
-    ll sum = 0;
-    for (int L = 1; L <= len_max; L++) {
-        int half = (L + 1) / 2;
-        ll start = 1;
-        for (int i = 1; i < half; i++) {
-            start *= 10;
+int get_huiwen(int num) {
+    // string str_num = to_string(num);
+    // string str_temp = str_num;
+    // reverse(str_temp.begin(), str_temp.end());
+    // str_num += str_temp;
+    // int ans = stoll(str_num);
+    // return ans;
+
+    int num0 = num;
+    while (num0 > 0) {
+        num *= 10;
+        num += num0 % 10;
+        num0 /= 10;
+    }
+    return num;
+}
+int get_huiwen2(int num, int plus) {
+    // string str_num = to_string(num);
+    // string str_temp = str_num;
+    // reverse(str_temp.begin(), str_temp.end());
+    // str_num += to_string(plus);
+    // str_num += str_temp;
+    // int ans = stoll(str_num);
+    // return ans;
+
+    int num0 = num;
+    num *= 10;
+    num += plus;
+    while (num0 > 0) {
+        num *= 10;
+        num += num0 % 10;
+        num0 /= 10;
+    }
+    return num;
+}
+bool check(int num) {
+    string num2;
+    while (num > 0) {
+        string temp = to_string(num % a);
+        num2 += temp;
+        num /= a;
+    }
+    int l = 0, r = num2.size() - 1;
+    while (r >= 0 && l < num2.size() && l < r) {
+        if (num2[l] != num2[r]) {
+            return false;
         }
-        ll end = start * 10 - 1;
+        l++;
+        r--;
+    }
+    return true;
+}
+void solve() {
+    int cnt = 0;
+    int sum = 0;
+    cin >> a;
+    cin >> n;
 
-        for (ll left = start; left <= end; left++) {
-            string s = to_string(left);
-            string rev;
-            if (L % 2 == 0) {
-                rev = s;
-                reverse(rev.begin(), rev.end());
-            } else {
-                if (s.size() > 1) {
-                    rev = s.substr(0, s.size() - 1);
-                } else {
-                    rev = "";
-                }
-                reverse(rev.begin(), rev.end());
-            }
-            string palindrome_str = s + rev;
-            if (palindrome_str.size() != L) {
-                continue;
-            }
+    string str_a = to_string(a);
+    int half_size = str_a.size() + 1;
+    // 枚举一半后拼接
 
-            ll x = stoll(palindrome_str);
-            if (x > N) {
+    // 偶数
+    for (int i = 1; i <= sqrt(n) + 1; i++) {
+        int num = get_huiwen(i);
+        if (num > n) {
+            break;
+        }
+        if (check(num)) {
+            // debug(num);
+            sum += num;
+            // cnt++;
+        }
+    }
+
+    // 奇数
+    for (int j = 0; j <= 9; j++) {
+        for (int i = 1; i <= sqrt(n) + 1; i++) {
+            int num = get_huiwen2(i, j);
+            if (num > n) {
                 break;
             }
-
-            ll t = x;
-            vector<ll> digits;
-            while (t) {
-                digits.push_back(t % A);
-                t /= A;
-            }
-            bool is_palindrome = true;
-            int num_digits = digits.size();
-            for (int i = 0; i < num_digits / 2; i++) {
-                if (digits[i] != digits[num_digits - 1 - i]) {
-                    is_palindrome = false;
-                    break;
-                }
-            }
-            if (is_palindrome) {
-                sum += x;
+            if (check(num)) {
+                // debug(num);
+                sum += num;
+                // cnt++;
             }
         }
     }
-    cout << sum << endl;
+
+    // 0-9
+    for (int i = 1; i <= 9 && i <= n; i++) {
+        if (check(i)) {
+            sum += i;
+            // cnt++;
+        }
+    }
+    cout << sum;
+}
+
+signed main() {
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+
+    // cin >> T;
+    while (T--) {
+        solve();
+    }
     return 0;
 }
