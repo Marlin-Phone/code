@@ -4,75 +4,51 @@
 using namespace std;
 #define endl '\n'
 #define debug(a) cout << #a << " = " << a << endl;
-// #define int long long
+#define int long long
 
 const int N = 4e5 + 10;
 int T = 1;
 int n;
 int a[N];
-// int weizhi[N];
-map<int, vector<int>> weizhi;
-int l[N], r[N];
+int L[N], R[N], l = 0, r = N;
 
-int f(int k) {
-    int l = 1, r;
-    while (a[l] != k) {
-        l++;
-    }
-    r = l + 1;
-    while (a[r] != k) {
-        r++;
-    }
-
-    return r - l - 1;
-}
-int getQuan() {
-    int sum = 0;
-    for (int i = 1; i <= n; i++) {
-        sum += f(i);
-    }
-    return sum;
-}
 void solve() {
     cin >> n;
-    for (int i = 1; i <= 2 * n; i++) {
+    for (int i = 1; i <= 2 * n; i++) { // 定义域
         cin >> a[i];
-        if (l[a[i]] == 0) {
-            l[a[i]] = i;
+    }
+    for (int i = 1; i <= 2 * n; i++) { // 定义域
+        if (L[a[i]] == 0) {
+            L[a[i]] = i;
+            l = max(L[a[i]], l); // 最靠右的l
         } else {
-            r[a[i]] = i;
+            R[a[i]] = i;
+            r = min(R[a[i]], r); // 最靠左的r
         }
-        // weizhi[a[i]].push_back(i);
     }
-    int initial_ans = 0;
-    for (int i = 1; i <= n; i++) {
-        initial_ans += (r[i] - l[i]);
-    }
-    initial_ans -= n;
-
-    int best_gain = 0;
-    for (int i = 1; i < 2 * n; i++) {
-        if (a[i] == a[i + 1]) {
-            continue;
-        }
-        int x = a[i], y = a[i + 1];
-        int other_x = (i == l[x]) ? r[x] : l[x];
-        int other_y = (i + 1 == l[y]) ? r[y] : l[y];
-        int term1 = abs(other_x - (i + 1)) + abs(other_y - i);
-        int term2 = (r[x] - l[x]) + (r[y] - l[y]);
-        int improve = term1 - term2;
-        best_gain = max(improve, best_gain);
-    }
-    // // 需要把离得近的两个值放的尽量远
-    // // 权值就是相等的两个值之间其它位置的个数
-    // for (auto it : weizhi) {
-    //     int a = it.second[0];
-    //     int b = it.second[1];
+    // for (int i = 1; i <= n; i++) { // 值域
+    //     cout << L[i] << " ";
     // }
-    if (best_gain < 0) {
-        best_gain = 0;
+    // cout << endl;
+    // for (int i = 1; i <= n; i++) {
+    //     cout << R[i] << " ";
+    // }
+    // cout << endl;
+    int sum = 0;
+    for (int i = 1; i <= n; i++) {
+        sum += (R[i] - L[i] - 1);
     }
-    cout << initial_ans + best_gain;
+    // debug(sum);
+    int mul = 2 * (l - r);
+    // debug(l);
+    // debug(r);
+    // cout << mul << endl;
+    if (mul < 0) {
+        cout << sum;
+    } else {
+        sum += mul;
+        cout << sum;
+    }
 }
 
 signed main() {
