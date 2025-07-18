@@ -5,14 +5,20 @@ using namespace std;
 #define endl '\n'
 #define debug(a) cout << #a << " = " << a << endl;
 // #define int long long
+// #define MOD 1000000007
 
-// const int MOD = 1e9 + 7;
-// const int N = 2e5 + 10;
+const int N = 110;
 int T = 1;
-int n;
+int t, m;
+int tim[N], val[N];
+int dp[N]; // i表示时间,dp[i]表示i时采到的草药的最大价值
 
 void solve() {
-    // cin >> n;
+    cin >> t >> m;
+    for (int i = 1; i <= m; i++) {
+        cin >> tim[i] >> val[i];
+    }
+    dfs()
 }
 
 signed main() {

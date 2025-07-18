@@ -4,15 +4,26 @@
 using namespace std;
 #define endl '\n'
 #define debug(a) cout << #a << " = " << a << endl;
-// #define int long long
+#define int unsigned long long
+// #define MOD 1000000007
 
-// const int MOD = 1e9 + 7;
 // const int N = 2e5 + 10;
 int T = 1;
-int n;
+int n, a, b;
 
 void solve() {
-    // cin >> n;
+    cin >> n >> a >> b;
+
+    if (n == 0 || a == 0 || b == 0) {
+        cout << 0 << endl;
+        return;
+    }
+
+    if (n < b / a) {
+        cout << n * a;
+    } else {
+        cout << b;
+    }
 }
 
 signed main() {

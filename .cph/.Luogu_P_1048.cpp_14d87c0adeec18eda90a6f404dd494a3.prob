@@ -1,0 +1,1 @@
+{"name":"Luogu - P1048","url":"https://www.luogu.com.cn/problem/P1048","memoryLimit":128000,"timeLimit":1000,"tests":[{"input":"70 3\n71 100\n69 1\n1 2\n","output":"3","id":1752826266712}],"group":"luogu","srcPath":"d:\\code\\Luogu_P_1048.cpp"}

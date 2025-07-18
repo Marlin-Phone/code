@@ -1,35 +1,33 @@
 // https://luogu.com.cn/problem/P2840
-// DP
+// DP 记忆化搜索
 #include <bits/stdc++.h>
 using namespace std;
 #define endl '\n'
 #define debug(a) cout << #a << " = " << a << endl;
 // #define int long long
-#define MOD 1000000007;
+#define MOD 1000000007
 
-const int N = 1e4 + 10;
+const int N = 1e5 + 10;
 int T = 1;
 int n, w;
 int a[N];
 int dp[N];
 
-int dfs(int money) {
-    if (money == 0) {
+int dfs(int i) {
+    if (i == 0) {
         return 1;
     }
-    if (dp[money]) {
-        return dp[money];
+    if (dp[i]) {
+        return dp[i];
     }
-
-    int ans = 0;
-    for (int i = 1; i <= n; i++) {
-        if (a[i] > money) {
+    int ans = 0; // ans就是dp[i]就是支付方式数量
+    for (int j = 1; j <= n; j++) {
+        if (i < a[j]) {
             continue;
         }
-        ans = (ans + dfs(money - a[i])) % MOD;
+        ans = (ans + dfs(i - a[j])) % MOD;
     }
-    dp[money] = ans;
-
+    dp[i] = ans;
     return ans;
 }
 void solve() {
@@ -39,14 +37,12 @@ void solve() {
     }
     dp[0] = 1;
     for (int i = 1; i <= w; i++) {
-        int temp;
         for (int j = 1; j <= n; j++) {
-            if (a[j] > i) {
+            if (i < a[j]) {
                 continue;
             }
-            temp = (temp + dp[i - a[j]]) % MOD;
+            dp[i] = (dp[i] + dfs(i - a[j])) % MOD;
         }
-        dp[i] = temp;
     }
     cout << dp[w];
     // cout << dfs(w);
