@@ -1,0 +1,1 @@
+{"name":"Local: 特别的二分","url":"d:\\code\\cpp\\左程云算法\\特别的二分.cpp","tests":[{"id":1753094689299,"input":"7\n5 7 8 7 13 9 0","output":"3"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\code\\cpp\\左程云算法\\特别的二分.cpp","group":"local","local":true}
