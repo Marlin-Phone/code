@@ -1,42 +1,24 @@
-// https://luogu.com.cn/problem/P
-//
 #include <bits/stdc++.h>
-using namespace std;
-#define endl '\n'
-#define debug(a) cout << #a << " = " << a << endl;
-// #define int long long
 
-// const int MOD = 1e9 + 7;
-const int N = 2e5 + 10;
-int T = 1;
-int n;
-int arr[N];
-
-int getMaxValue(int l, int r) {
-    if (l == r) {
-        return arr[l];
+void testRandQuality() {
+    // 测试 rand() 的低位分布
+    std::vector<int> counts(2, 0);
+    for (int i = 0; i < 10000; ++i) {
+        counts[rand() % 2]++; // 统计 0 和 1 的出现次数
     }
-    int m = l + (r - l) / 2;
-    int lmax = getMaxValue(l, m);
-    int rmax = getMaxValue(m + 1, r);
-    return max(lmax, rmax);
-}
-void solve() {
-    cin >> n;
-    for (int i = 1; i <= n; i++) {
-        cin >> arr[i];
-    }
-    cout << getMaxValue(1, n);
+    std::cout << "0: " << counts[0] << ", 1: " << counts[1] << std::endl;
+    // 理想情况应该接近 5000:5000，但 rand() 可能偏差较大
 }
 
-signed main() {
-    ios::sync_with_stdio(0);
-    cin.tie(0);
-    cout.tie(0);
+int main() {
+    srand(12345); // 固定种子便于观察
 
-    // cin >> T;
-    while (T--) {
-        solve();
+    // 测试连续三个数的模式
+    for (int i = 0; i < 10; ++i) {
+        int a = rand() % 2;
+        int b = rand() % 2;
+        int c = rand() % 2;
+        std::cout << a << b << c << " ";
     }
-    return 0;
+    // 某些 rand() 实现可能显示出可预测的模式
 }
