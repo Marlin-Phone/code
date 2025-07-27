@@ -19,10 +19,10 @@ void quickSort1(int l, int r) {
     int x = l + rand() % (r - l + 1);
     int pivot = arr[x];
 
-    int i = l; // 当前位置检查
-    int a = l; // 小于区域的右边界
-    int b = r; // 大于区域的左边界
-    while (i <= b) {
+    int i = l;       // 当前位置检查
+    int a = l;       // 小于区域的右边界
+    int b = r;       // 大于区域的左边界
+    while (i <= b) { // 荷兰国旗问题优化 |<pivot|=piovt|>piovt
         if (arr[i] < pivot) {
             swap(arr[i++], arr[a++]);
         } else if (arr[i] > pivot) {
