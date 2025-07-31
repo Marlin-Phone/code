@@ -1,24 +1,86 @@
+// https://luogu.com.cn/problem/P
+//
 #include <bits/stdc++.h>
+using namespace std;
+#define endl '\n'
+#define debug(a) cout << #a << " = " << a << endl;
+// #define int long long
 
-void testRandQuality() {
-    // 测试 rand() 的低位分布
-    std::vector<int> counts(2, 0);
-    for (int i = 0; i < 10000; ++i) {
-        counts[rand() % 2]++; // 统计 0 和 1 的出现次数
+// const int MOD = 1e9 + 7;
+const int N = 2e5 + 10;
+int T = 1;
+int n, k;
+struct node {
+    int val, idx;
+} a[N], b[N];
+bool cmp(struct node &a, struct node &b) { return a.val < b.val; }
+multiset<int> even_set;
+multiset<int> odd_set;
+priority_queue<int> pq;
+
+void solve() {
+    cin >> n >> k;
+    vector<int> a(n);
+    for (int i = 0; i < n; i++) {
+        cin >> a[i];
     }
-    std::cout << "0: " << counts[0] << ", 1: " << counts[1] << std::endl;
-    // 理想情况应该接近 5000:5000，但 rand() 可能偏差较大
+
+    for (auto it : a) {
+        even_set.insert(it);
+        odd_set.insert(it ^ k);
+    }
+
+    for (int m = 1; m <= n - 1; m++) {
+        if (m % 2 == 1) {
+            int v_min = *odd_set.begin();
+            int x = v_min ^ k;
+            even_set.erase(even_set.find(x));
+            odd_set.erase(odd_set.begin());
+        } else {
+            int v_min = *even_set.begin();
+            int y = v_min ^ k;
+            even_set.erase(even_set.begin());
+            odd_set.erase(odd_set.find(y));
+        }
+    }
+
+    if (n % 2 == 1) {
+        cout << *even_set.begin() << endl;
+    } else {
+        cout << *odd_set.begin() << endl;
+    }
+    // for (int i = 1; i <= n; i++) {
+    //     cout << a[i].val << " ";
+    // }
+    // cout << endl;
+    // for (int i = 1; i <= n; i++) {
+    //     cout << a[i].idx << " ";
+    // }
+    // cout << endl;
+
+    // for (int i = 1; i <= n; i++) {
+    //     cout << b[i].idx << " ";
+    // }
+    // cout << endl;
+
+    // for (int i = 1; i <= n; i++) {
+    //     cout << b[i].val << " ";
+    // }
+    // cout << endl;
+    // for (int i = 1; i <= n; i++) {
+    //     cout << a[i].val << " ";
+    // }
+    // cout << endl;
 }
 
-int main() {
-    srand(12345); // 固定种子便于观察
+signed main() {
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
 
-    // 测试连续三个数的模式
-    for (int i = 0; i < 10; ++i) {
-        int a = rand() % 2;
-        int b = rand() % 2;
-        int c = rand() % 2;
-        std::cout << a << b << c << " ";
+    // cin >> T;
+    while (T--) {
+        solve();
     }
-    // 某些 rand() 实现可能显示出可预测的模式
+    return 0;
 }
