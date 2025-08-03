@@ -11,18 +11,9 @@ using namespace std;
 int T = 1;
 int n;
 
-string getBinary(int num) {
-    string ans;
-    while (num != 0) {
-        ans += to_string(num % 2);
-        num /= 2;
-    }
-    reverse(ans.begin(), ans.end());
-    return ans;
-}
 void solve() {
-    cout << getBinary(5) << endl;
-    cout << getBinary(8) << endl;
+    cin >> n;
+    cout << "lose" << endl;
 }
 
 signed main() {
@@ -30,7 +21,7 @@ signed main() {
     cin.tie(0);
     cout.tie(0);
 
-    // cin >> T;
+    cin >> T;
     while (T--) {
         solve();
     }

@@ -9,20 +9,12 @@ using namespace std;
 // const int MOD = 1e9 + 7;
 // const int N = 2e5 + 10;
 int T = 1;
-int n;
+int n, m;
 
-string getBinary(int num) {
-    string ans;
-    while (num != 0) {
-        ans += to_string(num % 2);
-        num /= 2;
-    }
-    reverse(ans.begin(), ans.end());
-    return ans;
-}
 void solve() {
-    cout << getBinary(5) << endl;
-    cout << getBinary(8) << endl;
+    cin >> n >> m;
+    double ans = n * 0.6 + m * 1;
+    printf("%.2lf", ans);
 }
 
 signed main() {

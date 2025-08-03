@@ -10,19 +10,21 @@ using namespace std;
 // const int N = 2e5 + 10;
 int T = 1;
 int n;
+bitset<32> a, b, c, d;
 
-string getBinary(int num) {
-    string ans;
-    while (num != 0) {
-        ans += to_string(num % 2);
-        num /= 2;
-    }
-    reverse(ans.begin(), ans.end());
-    return ans;
-}
 void solve() {
-    cout << getBinary(5) << endl;
-    cout << getBinary(8) << endl;
+    int cnt = 0;
+
+    a.set(5);
+    debug(sizeof(a));
+    cout << sizeof(a) << endl;
+    debug(a.all());
+    for (int i = 0; i < 32; i++) {
+        if (a.test(i)) {
+            cnt++;
+        }
+    }
+    cout << cnt << endl;
 }
 
 signed main() {
