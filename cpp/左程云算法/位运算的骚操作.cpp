@@ -11,19 +11,13 @@ using namespace std;
 int T = 1;
 int n;
 
-string getBinary(int num) {
-    string ans;
-    while (num != 0) {
-        ans += to_string(num % 2);
-        num /= 2;
-    }
-    reverse(ans.begin(), ans.end());
-    return ans;
-}
 void solve() {
-    int ans = 0b11111 & 0b1;
-    cout << ans << endl;
-    // test
+    int n;
+    cin >> n;
+    debug(__builtin_popcount(n)); // 直接返回n的二进制1的个数
+    debug(__builtin_clz(n));    // 计算前导0的个数(返回n的二进制最高位的1的位置)
+    debug(__builtin_ctz(n));    // 计算末尾0的个数(返回n的二进制最低位的0的位置)
+    debug(__builtin_parity(n)); // 计算n的奇偶性(返回n的二进制中1的个数的奇偶性)
 }
 
 signed main() {
