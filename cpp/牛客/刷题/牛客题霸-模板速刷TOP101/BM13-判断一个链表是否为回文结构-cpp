@@ -1,0 +1,66 @@
+/**
+ * @nc app=nowcoder id=3fed228444e740c8be66232ce8b87c2f topic=295
+ * question=1008769 lang=C++ 2025-08-05 23:34:34
+ * https://www.nowcoder.com/practice/3fed228444e740c8be66232ce8b87c2f?tpId=295&tqId=1008769
+ * [BM13] 判断一个链表是否为回文结构
+ */
+
+/** @nc code=start */
+
+/**
+ * struct ListNode {
+ *	int val;
+ *	struct ListNode *next;
+ *	ListNode(int x) : val(x), next(nullptr) {}
+ * };
+ */
+class Solution {
+  public:
+    /**
+     * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
+     *
+     *
+     * @param head ListNode类 the head
+     * @return bool布尔型
+     */
+    bool isPail(ListNode *head) {
+        if (!head || !head->next)
+            return true;
+
+        // 快慢指针找中点
+        ListNode *slow = head, *fast = head;
+        while (fast->next && fast->next->next) {
+            slow = slow->next;
+            fast = fast->next->next;
+        }
+
+        // 反转后半部分
+        ListNode *reversedHalf = reverse(slow->next);
+
+        // 比较前后部分
+        ListNode *p1 = head, *p2 = reversedHalf;
+        while (p2) {
+            if (p1->val != p2->val) {
+                reverse(reversedHalf); // 可选恢复链表
+                return false;
+            }
+            p1 = p1->next;
+            p2 = p2->next;
+        }
+        return true;
+    }
+
+  private:
+    ListNode *reverse(ListNode *head) {
+        ListNode *prev = nullptr, *curr = head;
+        while (curr) {
+            ListNode *next = curr->next;
+            curr->next = prev;
+            prev = curr;
+            curr = next;
+        }
+        return prev;
+    }
+};
+
+/** @nc code=end */
