@@ -1,3 +1,5 @@
+#include <bits/stdc++.h>
+using namespace std;
 /*
  * @lc app=leetcode.cn id=102 lang=cpp
  *
@@ -24,20 +26,20 @@ class Solution {
         if (root == nullptr) {
             return ans;
         }
-        queue<TreeNode *> q;
-        q.push(root);
-        while (!q.empty()) {
-            int size = q.size();
+        queue<TreeNode *> que;
+        que.push(root);
+        while (!que.empty()) {
             vector<int> temp;
+            int size = que.size();
             for (int i = 0; i < size; i++) {
-                TreeNode *node = q.front();
-                temp.push_back(node->val);
-                q.pop();
-                if (node->left) {
-                    q.push(node->left);
+                auto t = que.front();
+                que.pop();
+                temp.push_back(t->val);
+                if (t->left) {
+                    que.push(t->left);
                 }
-                if (node->right) {
-                    q.push(node->right);
+                if (t->right) {
+                    que.push(t->right);
                 }
             }
             ans.push_back(temp);

@@ -1,3 +1,5 @@
+#include <bits/stdc++.h>
+using namespace std;
 /*
  * @lc app=leetcode.cn id=662 lang=cpp
  *
@@ -20,25 +22,28 @@
 class Solution {
   public:
     int widthOfBinaryTree(TreeNode *root) {
+        unsigned int ans = 0;
+        if (root == nullptr) {
+            return ans;
+        }
         queue<TreeNode *> que;
         queue<unsigned int> nums;
-
-        unsigned int l = 0, r = 0; // 左右边界
-        unsigned int ans = 0;      // 最大宽度
-
         que.push(root);
         nums.push(1);
-
         while (!que.empty()) {
             int size = que.size();
-            l = nums.front(); // 更新左边界
+            unsigned int l, r;
             for (int i = 0; i < size; i++) {
                 auto t = que.front();
                 unsigned int num = nums.front();
                 que.pop();
                 nums.pop();
-                r = num; // 更新右边界
-
+                if (i == 0) {
+                    l = num;
+                }
+                if (i == size - 1) {
+                    r = num;
+                }
                 if (t->left) {
                     que.push(t->left);
                     nums.push(num * 2);
@@ -48,9 +53,8 @@ class Solution {
                     nums.push(num * 2 + 1);
                 }
             }
-            ans = max(ans, r - l + 1);
+            ans = max(ans, (r - l) + 1);
         }
-
         return ans;
     }
 };

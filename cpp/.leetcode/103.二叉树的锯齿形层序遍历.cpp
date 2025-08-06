@@ -26,28 +26,30 @@ class Solution {
         }
         queue<TreeNode *> que;
         que.push(root);
-        int flag = 0;
         while (!que.empty()) {
-            int size = que.size();
             vector<int> temp;
+            int size = que.size();
             for (int i = 0; i < size; i++) {
-                auto t = que.front();
-                temp.push_back(t->val);
+                auto node = que.front();
                 que.pop();
-                if (t->left) {
-                    que.push(t->left);
+                temp.push_back(node->val);
+                if (node->left) {
+                    que.push(node->left);
                 }
-                if (t->right) {
-                    que.push(t->right);
+                if (node->right) {
+                    que.push(node->right);
                 }
-            }
-            if (flag == 1) {
-                reverse(temp.begin(), temp.end());
-                flag = 0;
-            } else {
-                flag = 1;
             }
             ans.push_back(temp);
+        }
+        int flag = 0;
+        for (int i = 0; i < ans.size(); i++) {
+            if (flag == 0) {
+                flag = 1;
+            } else {
+                flag = 0;
+                reverse(ans[i].begin(), ans[i].end());
+            }
         }
         return ans;
     }

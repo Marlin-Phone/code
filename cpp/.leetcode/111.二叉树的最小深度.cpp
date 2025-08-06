@@ -26,16 +26,15 @@ class Solution {
         if (root->left == nullptr && root->right == nullptr) {
             return 1;
         }
-        int ldeep = 1e9;
-        int rdeep = 1e9;
+        int ldepth = INT_MAX;
+        int rdepth = INT_MAX;
         if (root->left != nullptr) {
-            ldeep = minDepth(root->left);
+            ldepth = minDepth(root->left);
         }
         if (root->right != nullptr) {
-            rdeep = minDepth(root->right);
+            rdepth = minDepth(root->right);
         }
-
-        return min(ldeep, rdeep) + 1;
+        return min(ldepth, rdepth) + 1;
     }
 };
 // @lc code=end
