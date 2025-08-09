@@ -1,5 +1,7 @@
 // https://luogu.com.cn/problem/P
 //
+#pragma GCC optimize("O3", "inline", "omit-frame-pointer", "unroll-loops",     \
+                     "fast-math")
 #include <bits/stdc++.h>
 using namespace std;
 #define endl '\n'

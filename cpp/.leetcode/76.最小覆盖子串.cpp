@@ -8,29 +8,33 @@
 class Solution {
   public:
     string minWindow(string s, string t) {
-        int ans = INT_MAX;
-        int debt = t.size();
-        int cnts[256] = {0};
+        int debt = 0;
+        int cnt[256] = {0};
+        string ans = "";
         for (int i = 0; i < t.size(); i++) {
-            cnts[t[i]]--;
+            debt++;
+            cnt[t[i]]--;
         }
         int len = INT_MAX;
-        int start = 0;
+        int left = 0;
         for (int l = 0, r = 0; r < s.size(); r++) {
-            if (cnts[s[r]]++ < 0) {
+            if (cnt[s[r]] < 0) {
+                cnt[s[r]]++;
                 debt--;
+            } else {
+                cnt[s[r]]++;
             }
             if (debt == 0) {
-                while (cnts[s[l]] > 0) {
-                    cnts[s[l++]]--;
+                while (cnt[s[l]] > 0) {
+                    cnt[s[l++]]--;
                 }
-                if (r - l + 1 < len) {
+                if (len > r - l + 1) {
                     len = r - l + 1;
-                    start = l;
+                    left = l;
                 }
             }
         }
-        return len == INT_MAX ? "" : s.substr(start, len);
+        return len == INT_MAX ? "" : s.substr(left, len);
     }
 };
 // @lc code=end

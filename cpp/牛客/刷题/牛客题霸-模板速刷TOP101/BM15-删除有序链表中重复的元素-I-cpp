@@ -1,0 +1,43 @@
+
+/**
+ * @nc app=nowcoder id=c087914fae584da886a0091e877f2c79 topic=295 question=664 lang=C++
+ * 2025-08-09 23:00:31
+ * https://www.nowcoder.com/practice/c087914fae584da886a0091e877f2c79?tpId=295&tqId=664
+ * [BM15] 删除有序链表中重复的元素-I
+ */
+
+/** @nc code=start */
+
+/**
+ * struct ListNode {
+ *	int val;
+ *	struct ListNode *next;
+ *	ListNode(int x) : val(x), next(nullptr) {}
+ * };
+ */
+class Solution {
+public:
+    /**
+     * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
+     *
+     * 
+     * @param head ListNode类 
+     * @return ListNode类
+     */
+    ListNode* deleteDuplicates(ListNode* head) {
+        if(head == nullptr){
+            return head;
+        }
+        ListNode *cur = head;
+        while(cur != nullptr && cur->next != nullptr){
+            if(cur->val == cur->next->val){
+                cur->next = cur->next->next;
+            }else{
+                cur = cur->next;
+            }
+        }
+        return head;
+    }
+};
+
+/** @nc code=end */
