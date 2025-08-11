@@ -6,23 +6,11 @@ using namespace std;
 // Types
 #define ll long long
 #define int ll
-#define db double
-#define float db
-#define vi vector<int>
-#define pii pair<int, int>
-#define pdd pair<db, db>
+#define float double
 // Aliases
 #define x first
 #define y second
-#define pb push_back
-#define mp make_pair
 #define endl '\n'
-// Iterating
-#define F(i, m) for (int i = 1; i <= m; i++)
-#define fi(m) F(i, m)
-#define fj(m) F(j, m)
-#define fk(m) F(k, m)
-#define ALL(x) x.begin(), x.end()
 // Comparison
 #define is0(x) (fabs(x) < eps)
 #define feq(x, y) (is0(x - y))
@@ -35,15 +23,14 @@ using namespace std;
 // Debug
 #define dbg(a) cout << "Dbg: " << #a << " = " << a << endl;
 
-// const int N = 1e6 + 10;
-// const int MOD = 1e9 + 7;
 // const db eps = 1e-8;
+// const int MOD = 1e9 + 7;
+// const int N = 1e6 + 10;
 
 int n;
 
 void solve() {
-    //
-    cin >> n;
+    // cin >> n;
 }
 
 signed main() {

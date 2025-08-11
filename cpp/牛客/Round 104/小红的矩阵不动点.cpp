@@ -41,105 +41,48 @@ const int N = 510;
 
 int n, m;
 int a[N][N];
-int ans[N][N];
-int diff[N][N];
-pair<int, int> arrcnt[N];
-int cnt0[N];
+vector<pair<int, int>> bad;
+vector<vector<int>> v(505);
 
 void solve() {
-    int cnt = 0;
+    int ans = 0;
     cin >> n >> m;
     for (int i = 1; i <= n; i++) {
         for (int j = 1; j <= m; j++) {
             cin >> a[i][j];
-            ans[i][j] = min(i, j);
-            diff[i][j] = a[i][j] - ans[i][j];
-            if (diff[i][j] == 0) {
-                cnt++;
+            if (a[i][j] == min(i, j)) {
+                ans++;
+            } else {
+                bad.emplace_back(i, j);
+                v[min(i, j)].emplace_back(a[i][j]);
             }
-        }
-    }
-    // for (int i = 1; i <= n; i++) {
-    //     for (int j = 1; j <= m; j++) {
-    //         cout << ans[i][j] << " ";
-    //     }
-    //     cout << endl;
-    // }
-    // cout << endl;
-    // for (int i = 1; i <= n; i++) {
-    //     for (int j = 1; j <= m; j++) {
-    //         cout << diff[i][j] << " ";
-    //     }
-    //     cout << endl;
-    // }
-    for (int x = 0, i = 1 + x, j = 1 + x; x < n; x++) {
-        int a = 0, b = 0;
-        for (int i = 1 + x; i <= n; i++) {
-            if (i != j && diff[i][j] == 0) {
-                cnt0[x]++;
-            }
-            if (i != j && diff[i][j] == -1) {
-                a++;
-            }
-            if (i != j && diff[i][j] == 1) {
-                b++;
-            }
-            if (i == j) {
-                if (diff[i][j] == -1) {
-                    a++;
-                } else if (diff[i][j] == 1) {
-                    b++;
-                } else if (diff[i][j] == 0) {
-                    cnt0[x]++;
-                }
-            }
-        }
-        for (int j = 1 + x, i = 1 + x; j <= n; j++) {
-            if (i != j && diff[i][j] == -1) { // small
-                a++;
-            }
-            if (i != j && diff[i][j] == 1) { // big
-                b++;
-            }
-            if (i == j) {
-                if (diff[i][j] == -1) {
-                    a++;
-                } else if (diff[i][j] == 1) {
-                    b++;
-                } else if (diff[i][j] == 0) {
-                    cnt0[x]++;
-                }
-            }
-        }
-        // dbg(x);
-        // dbg(a);
-        // dbg(b);
-        // dbg(cnt0[x]);
-        // cout << endl;
-        arrcnt[x] = {a, b};
-    }
-    for (int x = 1; x < n - 1 || x < m - 1; x++) {
-        if ((arrcnt[x - 1].second >= 1 && arrcnt[x].first >= 1) ||
-            (arrcnt[x].second >= 1 && arrcnt[x + 1].first >= 1)) {
-            cnt += 2;
-            cout << cnt << endl;
-            return;
-        }
-    }
-    for (int x = 1; x < n - 1 || x < m - 1; x++) {
-        // dbg(n - x + m - x - 1);
-        if (((cnt0[x - 1] < (n - (x - 1) * 2) + (m - (x - 1) * 2) - 1) &&
-             arrcnt[x].first >= 1) ||
-            (arrcnt[x].second >= 1 &&
-             (cnt0[x + 1] < (n - (x + 1) * 2 + (m - (x + 1) * 2) - 1)))) {
-            cnt += 1;
-            cout << cnt << endl;
-            return;
         }
     }
 
-    // cout << "Here! " << endl;
-    cout << cnt << endl;
+    int add = 0;
+    for (auto &[x, y] : bad) {
+        int current_val = a[x][y];
+        int target_layer = current_val;
+        for (auto val : v[target_layer]) {
+            if (val == min(x, y)) {
+                add = 2;
+                break;
+            }
+        }
+
+        for (auto &val : v[a[x][y]]) {
+            add = 1;
+            if (min(x, y) == val) {
+                add = 2;
+                break;
+            }
+        }
+        if (add == 2) {
+            break;
+        }
+    }
+
+    cout << ans + add << endl;
 }
 
 signed main() {
