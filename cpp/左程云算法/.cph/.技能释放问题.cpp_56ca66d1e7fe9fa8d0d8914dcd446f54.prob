@@ -1,0 +1,1 @@
+{"name":"Local: 技能释放问题","url":"d:\\code\\cpp\\左程云算法\\技能释放问题.cpp","tests":[{"id":1755137170968,"input":"3\n3 100\n10 20\n45 89\n5 40\n3 100\n10 20\n45 90\n5 40\n3 100\n10 20\n45 84\n5 40","output":"3\n2\n-1"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\code\\cpp\\左程云算法\\技能释放问题.cpp","group":"local","local":true}
