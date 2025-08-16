@@ -25,40 +25,45 @@ using namespace std;
 
 // const db eps = 1e-8;
 // const int MOD = 1e9 + 7;
+const int N = 100;
 
-int n;   // 皇后数量
-int col; // 用整数状态(位信息)表示是否放皇后
-int left;
-int right;
+int n;       // 皇后数量
+int path[N]; // 第i行的皇后摆在了那一列
 
-int f2(int limit, int col, int left,
-       int right) { // limit:限制为几皇后问题 col:之前皇后的列影响
-                    // left:左对角线影响 right:右对角线影响
+// 检查0~i-1行皇后是否与(i, j)皇后冲突
+bool check(int i, int j) { // i, j为当前行和列
+    // 枚举前i行
+    for (int k = 0; k < i; k++) { // k 为之前皇后的编号
+        // 检查第k行皇后与当前(i, j)皇后是否冲突
+        if (j == path[k] || abs(j - path[k]) == abs(i - k)) {
+            return false;
+        }
+    }
+    return true;
+}
+
+int f1(int i, int n) { // i: 当前来到的行 0-base
     // 递归结束条件
-    if (col == limit) {
+    if (i == n) {
         return 1;
     }
-    int ban = col | left | right;   // 禁止的列
-    int candidate = limit & (~ban); // 候选列(能够放皇后的位置)
-    int place = 0;                  // 放置的列
-    int ans = 0;
-    while (candidate) {
-        place = candidate & (-candidate); // 获取当前列(提取出最右侧的1)
-        candidate ^= place;
-        ans +=
-            f2(limit, col | place, (left | place) >> 1, (right | place) << 1);
+    int ans = 0; // 统计解的个数
+    // 枚举列
+    for (int j = 0; j < n; j++) {
+        // 检查是否有冲突的皇后
+        if (check(i, j)) {
+            path[i] = j;
+            ans += f1(i + 1, n);
+        }
     }
     return ans;
 }
 
-int totalNQueens(int n) {
-    int limit = (1 << n) - 1;
-    return f2(limit, 0, 0, 0);
-}
+int totalNqueens(int n) { return f1(0, n); }
 
 void solve() {
     cin >> n;
-    cout << totalNQueens(n) << endl;
+    cout << totalNqueens(n) << endl;
 }
 
 signed main() {
