@@ -17,7 +17,6 @@ class Solution {
     int idx = 1;
     int ans = 0;
     int cnt = 0;
-
     void dfs(int x, int y, vector<vector<int>> &grid) {
         st[x][y] = true;
         for (int i = 0; i < 4; i++) {
@@ -34,11 +33,8 @@ class Solution {
             st[a][b] = true;
             grid[a][b] = idx;
             cnt++;
-            // cout << "Here! " << endl;
             dfs(a, b, grid);
-            // cout << "Here! " << endl;
         }
-        // cout << "idx = " << idx << endl;
         id[idx] = cnt;
         ans = max(ans, cnt);
     }
@@ -57,24 +53,6 @@ class Solution {
             }
         }
         ans = max(ans, temp + 1);
-        // for (int i = 0; i < 4; i++) {
-        //     for (int j = 0; j < 4; j++) {
-        //         int a1 = x + dx[i], b1 = y + dy[i];
-        //         int a2 = x + dx[j], b2 = y + dy[j];
-        //         if (a1 >= 0 && b1 >= 0 && a1 < n && b1 < n && a2 >= 0 &&
-        //             b2 >= 0 && a2 < n && b2 < n) {
-        //             // cout << "grid1 = " << grid[a1][b1] << endl;
-        //             // cout << "grid2 = " << grid[a2][b2] << endl;
-        //             // cout << endl;
-        //             ans = max(ans, id[grid[a1][b1]]);
-        //             if (grid[a1][b1] != grid[a2][b2]) {
-        //                 temp = id[grid[a1][b1]] + id[grid[a2][b2]] + 1;
-        //                 ans = max(ans, temp);
-        //                 // cout << "ans = " << ans << endl;
-        //             }
-        //         }
-        //     }
-        //     }
     }
 
     int largestIsland(vector<vector<int>> &grid) {
@@ -90,9 +68,6 @@ class Solution {
                 }
             }
         }
-        // for (int i = 0; i <= 3; i++) {
-        //     cout << id[i] << endl;
-        // }
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
                 if (grid[i][j] == 0) {
@@ -100,12 +75,6 @@ class Solution {
                 }
             }
         }
-        // for (int i = 0; i < n; i++) {
-        //     for (int j = 0; j < n; j++) {
-        //         cout << grid[i][j] << " ";
-        //     }
-        //     cout << endl;
-        // }
         return ans;
     }
 };
