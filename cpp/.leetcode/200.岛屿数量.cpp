@@ -9,43 +9,49 @@ using namespace std;
 // @lc code=start
 class Solution {
   public:
-    int n, m;
-    int dx[4] = {0, 0, 1, -1};
-    int dy[4] = {1, -1, 0, 0};
-    bool st[350][350];
-
-    void dfs(vector<vector<char>> &grid, int x, int y) {
-        st[x][y] = true;
-        for (int i = 0; i < 4; i++) {
-            int a = x + dx[i];
-            int b = y + dy[i];
-            if (a < 0 || a >= n || b < 0 || b >= m) {
-                continue;
+    struct DSU {
+        vector<int> fa;
+        int sets;
+        DSU(int n) : fa(n) {
+            for (int i = 0; i < n; i++) {
+                fa[i] = i;
             }
-            if (st[a][b]) {
-                continue;
-            }
-            if (grid[a][b] == '0') {
-                continue;
-            }
-            st[a][b] = true;
-            dfs(grid, a, b);
         }
-    }
+        int find(int x) { return fa[x] == x ? x : fa[x] = find(fa[x]); }
+        bool merge(int x, int y) {
+            x = find(x);
+            y = find(y);
+            if (x == y) {
+                return false;
+            }
+            fa[x] = y;
+            return true;
+        }
+    };
+    int dx[4] = {-1, 0, 1, 0};
+    int dy[4] = {0, 1, 0, -1};
 
     int numIslands(vector<vector<char>> &grid) {
-        n = grid.size(), m = grid[0].size();
         int ans = 0;
+        int n = grid.size();
+        int m = grid[0].size();
+        DSU dsu(n * m);
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < m; j++) {
-                if (grid[i][j] == '1' && !st[i][j]) {
-                    ans++;
-                    st[i][j] = true;
-                    dfs(grid, i, j);
+                if (grid[i][j] == '1') {
+                    dsu.sets++;
+                    if (j > 0 && grid[i][j - 1] == '1') {
+                        if (dsu.merge(i * m + j, i * m + j - 1))
+                            dsu.sets--;
+                    }
+                    if (i > 0 && grid[i - 1][j] == '1') {
+                        if (dsu.merge(i * m + j, (i - 1) * m + j))
+                            dsu.sets--;
+                    }
                 }
             }
         }
-        return ans;
+        return dsu.sets;
     }
 };
 // @lc code=end
