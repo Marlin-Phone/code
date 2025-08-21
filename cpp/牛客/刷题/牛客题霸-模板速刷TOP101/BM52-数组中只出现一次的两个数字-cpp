@@ -1,0 +1,41 @@
+#include <bits/stdc++.h>
+using namespace std;
+/**
+ * @nc app=nowcoder id=389fc1c3d3be4479a154f63f495abff8 topic=295
+ * question=1375231 lang=C++ 2025-08-21 00:16:53
+ * https://www.nowcoder.com/practice/389fc1c3d3be4479a154f63f495abff8?tpId=295&tqId=1375231
+ * [BM52] 数组中只出现一次的两个数字
+ */
+
+/** @nc code=start */
+
+class Solution {
+  public:
+    /**
+     * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
+     *
+     *
+     * @param nums int整型vector
+     * @return int整型vector
+     */
+    vector<int> FindNumsAppearOnce(vector<int> &nums) {
+        int eor1 = 0, eor2 = 0;
+        for (int i = 0; i < nums.size(); i++) {
+            eor1 ^= nums[i];
+        }
+        int diff = eor1 & -eor1;
+        for (int i = 0; i < nums.size(); i++) {
+            if (nums[i] & diff) {
+                eor2 ^= nums[i];
+            }
+        }
+        int a = eor2;
+        int b = eor1 ^ eor2;
+        if (a > b) {
+            swap(a, b);
+        }
+        return {a, b};
+    }
+};
+
+/** @nc code=end */
