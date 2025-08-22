@@ -1,0 +1,41 @@
+/**
+ * @nc app=nowcoder id=ff05d44dfdb04e1d83bdbdab320efbcb topic=295 question=23452 lang=C++
+ * 2025-08-22 17:24:09
+ * https://www.nowcoder.com/practice/ff05d44dfdb04e1d83bdbdab320efbcb?tpId=295&tqId=23452
+ * [BM31] 对称的二叉树
+ */
+
+/** @nc code=start */
+
+/**
+ * struct TreeNode {
+ *	int val;
+ *	struct TreeNode *left;
+ *	struct TreeNode *right;
+ *	TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+ * };
+ */
+class Solution {
+public:
+    /**
+     * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
+     *
+     * 
+     * @param pRoot TreeNode类 
+     * @return bool布尔型
+     */
+    vector<int> ans;
+    bool dfs(TreeNode* root1, TreeNode* root2){
+        if(root1 == nullptr && root2 == nullptr) 
+            return true;
+        if(root1 == nullptr || root2 == nullptr || root1->val != root2->val){
+            return false;
+        }
+        return dfs(root1->left, root2->right) && dfs(root1->right, root2->left);
+    }
+    bool isSymmetrical(TreeNode* pRoot) {
+        return dfs(pRoot, pRoot);
+    }
+};
+
+/** @nc code=end */
