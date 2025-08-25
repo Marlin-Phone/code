@@ -39,6 +39,8 @@ class Solution {
         }
         sort(questions.begin(), questions.end(),
              [](vector<int> &a, vector<int> &b) { return a[2] < b[2]; });
+        sort(edges.begin(), edges.end(),
+             [](vector<int> &a, vector<int> &b) { return a[2] < b[2]; });
         init(n);
         vector<bool> ans(k);
         for (int i = 0, j = 0; i < k; i++) {

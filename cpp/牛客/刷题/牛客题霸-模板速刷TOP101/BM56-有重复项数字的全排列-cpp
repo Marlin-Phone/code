@@ -1,0 +1,55 @@
+#include <bits/stdc++.h>
+using namespace std;
+/**
+ * @nc app=nowcoder id=a43a2b986ef34843ac4fdd9159b69863 topic=295 question=700
+ * lang=C++ 2025-08-25 23:46:54
+ * https://www.nowcoder.com/practice/a43a2b986ef34843ac4fdd9159b69863?tpId=295&tqId=700
+ * [BM56] 有重复项数字的全排列
+ */
+
+/** @nc code=start */
+
+class Solution {
+  public:
+    /**
+     * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
+     *
+     *
+     * @param num int整型vector
+     * @return int整型vector<vector<>>
+     */
+    vector<vector<int>> res;
+    vector<int> arr;
+    vector<int> st;
+    set<vector<int>> vec_set;
+    int n;
+    void dfs(int x, vector<int> &num) {
+        if (x == n) {
+            if (vec_set.count(arr) == 0) {
+                vec_set.insert(arr);
+                res.push_back(arr);
+            }
+            return;
+        }
+        for (int i = 0; i < n; i++) {
+            if (st[i]) {
+                continue;
+            }
+            st[i] = 1;
+            arr[x] = num[i];
+            dfs(x + 1, num);
+            st[i] = 0;
+            arr[x] = 0;
+        }
+    }
+    vector<vector<int>> permuteUnique(vector<int> &num) {
+        n = num.size();
+        arr.resize(n);
+        st.resize(n);
+        dfs(0, num);
+        sort(res.begin(), res.end());
+        return res;
+    }
+};
+
+/** @nc code=end */
