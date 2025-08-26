@@ -1,0 +1,58 @@
+#include <bits/stdc++.h>
+using namespace std;
+/**
+ * @nc app=nowcoder id=fe6b651b66ae47d7acce78ffdd9a96c7 topic=295 question=23291
+ * lang=C++ 2025-08-26 03:07:22
+ * https://www.nowcoder.com/practice/fe6b651b66ae47d7acce78ffdd9a96c7?tpId=295&tqId=23291
+ * [BM58] 字符串的排列
+ */
+
+/** @nc code=start */
+
+class Solution {
+  public:
+    /**
+     * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
+     *
+     *
+     * @param str string字符串
+     * @return string字符串vector
+     */
+    vector<string> ans;
+    vector<int> arr;
+    vector<int> st;
+    set<string> set_str;
+    int n;
+    void dfs(int x, string str) {
+        if (x >= n) {
+            string temp;
+            for (int i = 0; i < n; i++) {
+                temp += str[arr[i]];
+            }
+            if (set_str.count(temp) == 0) {
+                ans.push_back(temp);
+                set_str.insert(temp);
+            }
+            return;
+        }
+        for (int i = 0; i < n; i++) {
+            if (st[i]) {
+                continue;
+            }
+            st[i] = 1;
+            arr[x] = i;
+            dfs(x + 1, str);
+            st[i] = 0;
+            arr[x] = 0;
+        }
+    }
+    vector<string> Permutation(string str) {
+        n = str.size();
+        arr.resize(n);
+        st.resize(n);
+        dfs(0, str);
+        return ans;
+    }
+};
+
+/** @nc code=end */

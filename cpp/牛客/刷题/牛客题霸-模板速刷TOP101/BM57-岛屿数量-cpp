@@ -1,0 +1,55 @@
+#include <bits/stdc++.h>
+using namespace std;
+/**
+ * @nc app=nowcoder id=0c9664d1554e466aa107d899418e814e topic=295
+ * question=1024684 lang=C++ 2025-08-26 03:00:35
+ * https://www.nowcoder.com/practice/0c9664d1554e466aa107d899418e814e?tpId=295&tqId=1024684
+ * [BM57] 岛屿数量
+ */
+
+/** @nc code=start */
+
+class Solution {
+  public:
+    /**
+     * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
+     *
+     * 判断岛屿数量
+     * @param grid char字符型vector<vector<>>
+     * @return int整型
+     */
+    vector<vector<int>> visited;
+    int n, m;
+    int dx[4] = {0, 1, 0, -1};
+    int dy[4] = {1, 0, -1, 0};
+    void dfs(vector<vector<char>> &grid, int x, int y) {
+        if (x < 0 || x >= n || y < 0 || y >= m || grid[x][y] == '0' ||
+            visited[x][y] == 1) {
+            return;
+        }
+        visited[x][y] = 1;
+        for (int i = 0; i < 4; i++) {
+            int nx = x + dx[i];
+            int ny = y + dy[i];
+            dfs(grid, nx, ny);
+        }
+    }
+
+    int solve(vector<vector<char>> &grid) {
+        n = grid.size();
+        m = grid[0].size();
+        visited.resize(n, vector<int>(m, 0));
+        int ans = 0;
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                if (grid[i][j] == '1' && visited[i][j] == 0) {
+                    dfs(grid, i, j);
+                    ans++;
+                }
+            }
+        }
+        return ans;
+    }
+};
+
+/** @nc code=end */
