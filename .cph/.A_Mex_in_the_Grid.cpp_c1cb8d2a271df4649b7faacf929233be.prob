@@ -1,0 +1,1 @@
+{"name":"A. Mex in the Grid","url":"https://codeforces.com/contest/2101/problem/A","interactive":false,"memoryLimit":0,"timeLimit":3000,"group":"Codeforces - Codeforces Round 1024 (Div. 1)","tests":[{"id":1756225880514,"input":"2\n2\n3\n","output":"0 1\n2 3\n8 4 5\n6 0 1\n7 2 3\n"}],"srcPath":"d:\\code\\A_Mex_in_the_Grid.cpp"}

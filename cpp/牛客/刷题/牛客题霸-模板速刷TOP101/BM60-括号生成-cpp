@@ -1,0 +1,40 @@
+#include <bitss/stdc++.h>
+using namespace std;
+/**
+ * @nc app=nowcoder id=c9addb265cdf4cdd92c092c655d164ca topic=295 question=725
+ * lang=C++ 2025-08-27 01:23:27
+ * https://www.nowcoder.com/practice/c9addb265cdf4cdd92c092c655d164ca?tpId=295&tqId=725
+ * [BM60] 括号生成
+ */
+
+/** @nc code=start */
+
+class Solution {
+  public:
+    /**
+     * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
+     *
+     *
+     * @param n int整型
+     * @return string字符串vector
+     */
+    vector<string> ans;
+    void dfs(int n, int m, string res) {
+        if (n == 0 && m == 0) { // 结束条件
+            ans.push_back(res);
+            return;
+        }
+        if (n > 0) {
+            dfs(n - 1, m, res + "("); // 左括号)
+        }
+        if (m > 0 && m > n) {
+            dfs(n, m - 1, res + ")"); // 右括号
+        }
+    }
+    vector<string> generateParenthesis(int n) {
+        dfs(n, n, "");
+        return ans;
+    }
+};
+
+/** @nc code=end */
