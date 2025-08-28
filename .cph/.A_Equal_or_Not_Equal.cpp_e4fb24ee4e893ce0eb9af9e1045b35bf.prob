@@ -1,0 +1,1 @@
+{"name":"A. Equal or Not Equal","url":"https://codeforces.com/contest/1620/problem/A","interactive":false,"memoryLimit":0,"timeLimit":3000,"group":"Codeforces - Educational Codeforces Round 119 (Rated for Div. 2)","tests":[{"id":1756307928316,"input":"4\nEEE\nEN\nENNEENE\nNENN\n","output":"YES\nNO\nYES\nYES\n"}],"srcPath":"d:\\code\\A_Equal_or_Not_Equal.cpp"}

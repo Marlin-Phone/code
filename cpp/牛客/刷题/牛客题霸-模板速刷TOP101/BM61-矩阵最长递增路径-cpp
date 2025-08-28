@@ -1,0 +1,54 @@
+#include <bits/stdc++.h>
+using namespace std;
+/**
+ * @nc app=nowcoder id=7a71a88cdf294ce6bdf54c899be967a2 topic=295
+ * question=1076860 lang=C++ 2025-08-28 01:55:52
+ * https://www.nowcoder.com/practice/7a71a88cdf294ce6bdf54c899be967a2?tpId=295&tqId=1076860
+ * [BM61] 矩阵最长递增路径
+ */
+
+/** @nc code=start */
+
+class Solution {
+  public:
+    /**
+     * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
+     *
+     * 递增路径的最大长度
+     * @param matrix int整型vector<vector<>> 描述矩阵的每个数
+     * @return int整型
+     */
+    static const int N = 1e3 + 10;
+    int ans = 0;
+    int n, m;
+    int dx[4] = {0, 0, 1, -1};
+    int dy[4] = {1, -1, 0, 0};
+    int dp[N][N];
+    int dfs(vector<vector<int>> &matrix, int x, int y) {
+        if (dp[x][y]) {
+            return dp[x][y];
+        }
+        dp[x][y]++;
+        for (int k = 0; k < 4; k++) {
+            int a = x + dx[k];
+            int b = y + dy[k];
+            if (a >= 0 && a < n && b >= 0 && b < m &&
+                matrix[a][b] > matrix[x][y]) {
+                dp[x][y] = max(dp[x][y], dfs(matrix, a, b) + 1);
+            }
+        }
+        return dp[x][y];
+    }
+    int solve(vector<vector<int>> &matrix) {
+        n = matrix.size();
+        m = matrix[0].size();
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                ans = max(ans, dfs(matrix, i, j));
+            }
+        }
+        return ans;
+    }
+};
+
+/** @nc code=end */
