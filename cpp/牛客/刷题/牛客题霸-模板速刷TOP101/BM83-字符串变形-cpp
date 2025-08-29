@@ -1,0 +1,59 @@
+#include <bits/stdc++.h>
+using namespace std;
+/**
+ * @nc app=nowcoder id=c3120c1c1bc44ad986259c0cf0f0b80e topic=295 question=44664
+ * lang=C++ 2025-08-30 00:45:00
+ * https://www.nowcoder.com/practice/c3120c1c1bc44ad986259c0cf0f0b80e?tpId=295&tqId=44664
+ * [BM83] 字符串变形
+ */
+
+/** @nc code=start */
+
+class Solution {
+  public:
+    /**
+     * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
+     *
+     *
+     * @param s string字符串
+     * @param n int整型
+     * @return string字符串
+     */
+    void func(string &s) {
+        for (int i = 0; i < s.size(); i++) {
+            if (s[i] >= 'a' && s[i] <= 'z') {
+                s[i] -= 'a';
+                s[i] += 'A';
+            } else {
+                s[i] -= 'A';
+                s[i] += 'a';
+            }
+        }
+        return;
+    }
+    string trans(string s, int n) {
+        bool flag = false;
+        if (s[n - 1] == ' ') {
+            flag = true;
+        }
+        int len = s.size();
+        string res;
+        vector<string> ans;
+        istringstream iss(s);
+        while (getline(iss, s, ' ')) {
+            func(s);
+            ans.push_back(s);
+            ans.push_back(" ");
+        }
+        if (!flag) {
+            ans.pop_back();
+        }
+        reverse(ans.begin(), ans.end());
+        for (auto it : ans) {
+            res += it;
+        }
+        return res;
+    }
+};
+
+/** @nc code=end */
