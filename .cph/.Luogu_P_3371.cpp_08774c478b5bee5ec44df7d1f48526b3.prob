@@ -1,0 +1,1 @@
+{"name":"Luogu - P3371","url":"https://www.luogu.com.cn/problem/P3371","memoryLimit":128000,"timeLimit":1000,"tests":[{"id":1756556782120,"input":"4 6 1\n1 2 2\n2 3 2\n2 4 1\n1 3 5\n3 4 3\n1 4 4","output":"0 2 4 3"}],"group":"luogu","srcPath":"d:\\code\\Luogu_P_3371.cpp"}
