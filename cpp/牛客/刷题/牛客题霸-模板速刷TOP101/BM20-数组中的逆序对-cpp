@@ -1,0 +1,64 @@
+#include <bits/stdc++.h>
+using namespace std;
+/**
+ * @nc app=nowcoder id=96bd6684e04a44eb80e6a68efc0ec6c5 topic=295 question=23260
+ * lang=C++ 2025-09-02 21:29:08
+ * https://www.nowcoder.com/practice/96bd6684e04a44eb80e6a68efc0ec6c5?tpId=295&tqId=23260
+ * [BM20] 数组中的逆序对
+ */
+
+/** @nc code=start */
+
+class Solution {
+  public:
+    /**
+     * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
+     *
+     *
+     * @param nums int整型vector
+     * @return int整型
+     */
+    vector<int> help;
+    static const int MOD = 1e9 + 7;
+    int merge(vector<int> &nums, int l, int m, int r) {
+        int sum = 0;
+        int a = l, b = m + 1, i = l;
+        while (a <= m && b <= r) {
+            if (nums[a] > nums[b]) {
+                sum = (sum + (m - a + 1)) % MOD;
+                // a - l + 1;
+                help[i++] = nums[b++];
+            } else {
+                help[i++] = nums[a++];
+            }
+        }
+        while (a <= m) {
+            help[i++] = nums[a++];
+        }
+        while (b <= r) {
+            help[i++] = nums[b++];
+        }
+        for (int j = l; j <= r; j++) {
+            nums[j] = help[j];
+        }
+        return sum;
+    }
+    int mergeSort(vector<int> &nums, int l, int r) {
+        if (l == r) {
+            return 0;
+        }
+        int m = l + (r - l) / 2;
+        int lsum = mergeSort(nums, l, m);
+        int rsum = mergeSort(nums, m + 1, r);
+        int lrsum = merge(nums, l, m, r);
+        return (lsum + rsum + lrsum) % MOD;
+    }
+    int InversePairs(vector<int> &nums) {
+        int n = nums.size();
+        help.resize(n);
+        int res = mergeSort(nums, 0, n - 1);
+        return res;
+    }
+};
+
+/** @nc code=end */

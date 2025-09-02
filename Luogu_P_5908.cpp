@@ -18,12 +18,36 @@ using namespace std;
 
 // const db eps = 1e-8;
 // const int MOD = 1e9 + 7;
-// const int N = 1e6 + 10;
+const int N = 1e5 + 10;
 
-int n;
+int n, d;
+bool vis[N];
+vector<vector<int>> g;
+int ans = 0;
 
+void dfs(int u, int cnt) {
+    for (auto v : g[u]) {
+        if (!vis[v] && cnt + 1 <= d) {
+            ans++;
+            vis[v] = true;
+            // dbg(cnt);
+            // dbg(v);
+            dfs(v, cnt + 1);
+        }
+    }
+}
 void solve() {
-    // cin >> n;
+    cin >> n >> d;
+    g.resize(n + 1);
+    for (int i = 1; i <= n - 1; i++) {
+        int uu, vv;
+        cin >> uu >> vv;
+        g[uu].push_back(vv);
+        g[vv].push_back(uu);
+    }
+    vis[1] = true;
+    dfs(1, 0);
+    cout << ans << endl;
 }
 
 signed main() {

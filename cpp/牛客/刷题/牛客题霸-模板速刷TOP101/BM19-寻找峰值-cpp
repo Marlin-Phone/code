@@ -1,0 +1,43 @@
+#include <bits/stdc++.h>
+using namespace std;
+/**
+ * @nc app=nowcoder id=fcf87540c4f347bcb4cf720b5b350c76 topic=295
+ * question=2227748 lang=C++ 2025-09-01 17:41:33
+ * https://www.nowcoder.com/practice/fcf87540c4f347bcb4cf720b5b350c76?tpId=295&tqId=2227748
+ * [BM19] 寻找峰值
+ */
+
+/** @nc code=start */
+
+class Solution {
+  public:
+    /**
+     * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
+     *
+     *
+     * @param nums int整型vector
+     * @return int整型
+     */
+    int findPeakElement(vector<int> &nums) {
+        int n = nums.size();
+        int l = -1, r = n;
+        if (nums[0] > nums[1]) {
+            return 0;
+        }
+        if (nums[n - 2] < nums[n - 1]) {
+            return n - 1;
+        }
+        while (l + 1 != r) {
+            int m = (l + r) / 2;
+            if (nums[m - 1] < nums[m]) {
+                l = m;
+            } else {
+                r = m;
+            }
+            cout << "l = " << l << " r = " << r << endl;
+        }
+        return l;
+    }
+};
+
+/** @nc code=end */

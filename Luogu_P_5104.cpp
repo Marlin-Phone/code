@@ -20,10 +20,12 @@ using namespace std;
 // const int MOD = 1e9 + 7;
 // const int N = 1e6 + 10;
 
-int n;
+int n, w, k;
 
 void solve() {
-    // cin >> n;
+    cin >> w >> n >> k;
+    double ans = 1.0 * w / pow(2, k);
+    printf("%lf", ans);
 }
 
 signed main() {
