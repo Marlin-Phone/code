@@ -1,0 +1,38 @@
+#include <bits/stdc++.h>
+using namespace std;
+/**
+ * @nc app=nowcoder id=89865d4375634fc484f3a24b7fe65665 topic=295 question=658 lang=C++
+ * 2025-09-03 23:04:02
+ * https://www.nowcoder.com/practice/89865d4375634fc484f3a24b7fe65665?tpId=295&tqId=658
+ * [BM87] 合并两个有序的数组
+ */
+
+/** @nc code=start */
+
+class Solution {
+public:
+    void merge(int A[], int m, int B[], int n) {
+        int a = 0;
+        int b = 0;
+        int i = 0;
+        vector<int> help(m + n);
+        while(a < m && b < n){
+            if(A[a] <= B[b]){
+                help[i++] = A[a++];
+            }else{
+                help[i++] = B[b++];
+            }
+        }
+        while(a < m){
+            help[i++] = A[a++];
+        }
+        while(b < n){
+            help[i++] = B[b++];
+        }
+        for(int i = 0; i < m + n; i++){
+            A[i] = help[i];
+        }
+    }
+};
+
+/** @nc code=end */
