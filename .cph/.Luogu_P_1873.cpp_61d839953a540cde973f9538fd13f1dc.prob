@@ -1,1 +1,0 @@
-{"name":"Luogu - P1873","url":"https://www.luogu.com.cn/problem/P1873","memoryLimit":128000,"timeLimit":1000,"tests":[{"input":"4 7\n20 15 10 17","output":"15","id":1741676814766},{"id":1741676814858,"input":"5 20\n4 42 40 26 46","output":"36"},{"id":1741697703195,"input":"5 2\n2 2 2 2 2","output":""}],"group":"luogu","srcPath":"d:\\code\\Luogu_P_1873.cpp"}

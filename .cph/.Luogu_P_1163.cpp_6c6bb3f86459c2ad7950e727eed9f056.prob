@@ -1,1 +1,0 @@
-{"name":"Luogu - P1163","url":"https://www.luogu.com.cn/problem/P1163","memoryLimit":128000,"timeLimit":1000,"tests":[{"input":"1000 100 12\n","output":"2.9\n","id":1741779132203},{"id":1741779860329,"input":"1000 500 2","output":"0.0"},{"id":1741784193303,"input":"2147483647 2147483647 2","output":"61.8"}],"group":"luogu","srcPath":"d:\\code\\Luogu_P_1163.cpp"}

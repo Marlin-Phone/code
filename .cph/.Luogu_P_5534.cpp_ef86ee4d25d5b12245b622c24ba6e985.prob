@@ -1,1 +1,0 @@
-{"name":"Luogu - P5534","url":"https://www.luogu.com.cn/problem/P5534","memoryLimit":256000,"timeLimit":1000,"tests":[{"input":"1 2 3\n","output":"6\n","id":1737269954660},{"id":1737269954697,"input":"-5 -10 5\n","output":"-75\n"}],"group":"luogu","srcPath":"d:\\code\\Luogu_P_5534.cpp"}

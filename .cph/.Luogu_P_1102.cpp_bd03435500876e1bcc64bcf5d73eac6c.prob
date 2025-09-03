@@ -1,1 +1,0 @@
-{"name":"Luogu - P1102","url":"https://www.luogu.com.cn/problem/P1102","memoryLimit":128000,"timeLimit":1000,"tests":[{"id":1741230711768,"input":"4 1\n1 1 2 3\n","output":"3"},{"id":1741233096530,"input":"3 0\n1 1 1","output":"3"},{"id":1741233846129,"input":"4 1\n3 2 1 1","output":""}],"group":"luogu","srcPath":"d:\\code\\Luogu_P_1102.cpp"}

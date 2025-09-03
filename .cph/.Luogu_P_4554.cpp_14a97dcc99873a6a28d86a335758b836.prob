@@ -1,1 +1,0 @@
-{"name":"Luogu - P4554","url":"https://www.luogu.com.cn/problem/P4554","memoryLimit":128000,"timeLimit":1000,"tests":[{"id":1742032901238,"input":"2 2\n@#\n#@\n0 0 1 1\n2 2\n@@\n@#\n0 1 1 0\n0 0","output":"2\n0"}],"group":"luogu","srcPath":"d:\\code\\Luogu_P_4554.cpp"}

@@ -1,1 +1,0 @@
-{"name":"Luogu - U107394","url":"https://www.luogu.com.cn/problem/U107394","memoryLimit":131072,"timeLimit":1000,"tests":[{"id":1755765887582,"input":"5 3\n1 2\n2 4\n4 3","output":"1 2 4 3 5"}],"group":"luogu","srcPath":"d:\\code\\Luogu_U_107394.cpp"}

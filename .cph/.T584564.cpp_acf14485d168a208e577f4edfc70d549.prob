@@ -1,1 +1,0 @@
-{"name":"Local: T584564","url":"d:\\code\\T584564.cpp","tests":[{"id":1741951905934,"input":"11","output":"3\n3"},{"id":1741951911515,"input":"27","output":"6\n5"},{"id":1741951918624,"input":"1925","output":"170\n17"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\code\\T584564.cpp","group":"local","local":true}

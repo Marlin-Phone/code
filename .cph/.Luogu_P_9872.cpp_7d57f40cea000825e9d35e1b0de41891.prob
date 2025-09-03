@@ -1,1 +1,0 @@
-{"name":"Luogu - P9872","url":"https://www.luogu.com.cn/problem/P9872","memoryLimit":1048576,"timeLimit":3000,"tests":[{"id":1747740888613,"input":"2\n4\n1 2\n2 3\n3 4\n5\n1 2\n2 3\n2 4\n1 5","output":"1 1\n2 2\n3 3\n4 4\n1 1\n2 3\n3 5\n3 5\n2 5"}],"group":"luogu","srcPath":"d:\\code\\Luogu_P_9872.cpp"}

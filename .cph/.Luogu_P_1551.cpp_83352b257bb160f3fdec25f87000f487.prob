@@ -1,1 +1,0 @@
-{"name":"Luogu - P1551","url":"https://www.luogu.com.cn/problem/P1551","memoryLimit":128000,"timeLimit":1000,"tests":[{"id":1751642816640,"input":"6 5 3\n1 2\n1 5\n3 4\n5 2\n1 3\n1 4\n2 3\n5 6","output":"Yes\nYes\nNo"}],"group":"luogu","srcPath":"d:\\code\\Luogu_P_1551.cpp"}

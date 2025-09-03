@@ -1,1 +1,0 @@
-{"name":"Luogu - P1596","url":"https://www.luogu.com.cn/problem/P1596","memoryLimit":128000,"timeLimit":1000,"tests":[{"id":1739751862453,"input":"10 12\nW........WW.\n.WWW.....WWW\n....WW...WW.\n.........WW.\n.........W..\n..W......W..\n.W.W.....WW.\nW.W.W.....W.\n.W.W......W.\n..W.......W.\n","output":"3\n"}],"group":"luogu","srcPath":"d:\\code\\Luogu_P_1596.cpp"}

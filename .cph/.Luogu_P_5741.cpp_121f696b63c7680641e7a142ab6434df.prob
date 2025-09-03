@@ -1,1 +1,0 @@
-{"name":"Luogu - P5741","url":"https://www.luogu.com.cn/problem/P5741","memoryLimit":128000,"timeLimit":1000,"tests":[{"id":1738257849430,"input":"3\nfafa 90 90 90\nlxl 95 85 90\nsenpai 100 80 91","output":"fafa lxl\nlxl senpai\n"}],"group":"luogu","srcPath":"d:\\code\\Luogu_P_5741.cpp"}

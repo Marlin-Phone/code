@@ -1,1 +1,0 @@
-{"name":"Luogu - P12404","url":"https://www.luogu.com.cn/problem/P12404","memoryLimit":524288,"timeLimit":1000,"tests":[{"input":"2 3 1","output":"2 2","id":1746271685241},{"input":"7 2 3","output":"7 3","id":1746271685242},{"id":1746272018323,"input":"15 2 3","output":"12 3"}],"group":"luogu","srcPath":"d:\\code\\Luogu_P_12404.cpp"}

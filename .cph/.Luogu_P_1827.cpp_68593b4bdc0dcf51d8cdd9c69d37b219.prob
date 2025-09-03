@@ -1,1 +1,0 @@
-{"name":"Luogu - P1827","url":"https://www.luogu.com.cn/problem/P1827","memoryLimit":128000,"timeLimit":1000,"tests":[{"id":1746251443813,"input":"ABEDFCHG\nCBADEFGH \n","output":"AEFDBHGC"}],"group":"luogu","srcPath":"d:\\code\\Luogu_P_1827.cpp"}

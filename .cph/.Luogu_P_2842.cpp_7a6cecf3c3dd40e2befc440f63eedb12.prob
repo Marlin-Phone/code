@@ -1,1 +1,0 @@
-{"name":"Luogu - P2842","url":"https://www.luogu.com.cn/problem/P2842","memoryLimit":524288,"timeLimit":1000,"tests":[{"input":"6 15\n1 5 10 20 50 100","output":"2","id":1752784800342},{"id":1752784800343,"input":"3 15\n1 5 11","output":"3"}],"group":"luogu","srcPath":"d:\\code\\Luogu_P_2842.cpp"}

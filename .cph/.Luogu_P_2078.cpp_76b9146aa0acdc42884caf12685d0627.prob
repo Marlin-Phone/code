@@ -1,1 +1,0 @@
-{"name":"Luogu - P2078","url":"https://www.luogu.com.cn/problem/P2078","memoryLimit":128000,"timeLimit":1000,"tests":[{"id":1751643316829,"input":"4 3 4 2\n1 1\n1 2\n2 3\n1 3\n-1 -2\n-3 -3\n","output":"2"}],"group":"luogu","srcPath":"d:\\code\\Luogu_P_2078.cpp"}
