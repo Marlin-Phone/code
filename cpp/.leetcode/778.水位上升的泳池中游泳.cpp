@@ -28,20 +28,23 @@ class Solution {
             if (d > dis[x][y]) {
                 continue;
             }
+            if (x == n - 1 && y == m - 1) {
+                return d;
+            }
             for (int i = 0; i < 4; i++) {
                 int a = x + dx[i];
                 int b = y + dy[i];
                 if (a < 0 || b < 0 || a >= n || b >= m) {
                     continue;
                 }
-                int w = grid[a][b];
+                int w = max(grid[a][b], d);
                 if (dis[a][b] > w) {
                     dis[a][b] = w;
                     heap.push({dis[a][b], {a, b}});
                 }
             }
         }
-        return dis[n - 1][m - 1];
+        return -1;
     }
 };
 // @lc code=end
