@@ -1,0 +1,32 @@
+#include <bits/stdc++.h>
+using namespace std;
+/**
+ * @nc app=nowcoder id=8c82a5b80378478f9484d87d1c5f12a4 topic=295 question=23261
+ * lang=C++ 2025-09-05 00:48:41
+ * https://www.nowcoder.com/practice/8c82a5b80378478f9484d87d1c5f12a4?tpId=295&tqId=23261
+ * [BM63] 跳台阶
+ */
+
+/** @nc code=start */
+
+class Solution {
+  public:
+    /**
+     * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
+     *
+     *
+     * @param number int整型
+     * @return int整型
+     */
+    int jumpFloor(int number) {
+        vector<int> dp(number + 1, 0);
+        dp[0] = 1;
+        dp[1] = 1;
+        for (int i = 2; i <= number; i++) {
+            dp[i] = dp[i - 1] + dp[i - 2];
+        }
+        return dp[number];
+    }
+};
+
+/** @nc code=end */
