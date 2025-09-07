@@ -27,17 +27,24 @@ using namespace std;
 // const int MOD = 1e9 + 7;
 // const int N = 1e6 + 10;
 
-int n, q;
-string str;
+int x, n;
+
+int fast_pow(int x, int n) {
+    int ans = 1;
+    while (n > 0) {
+        if ((n & 1) == 1) {
+            ans = ans * x;
+        }
+        x = (x * x);
+        n /= 2;
+    }
+    return ans;
+}
 
 void solve() {
-    cin >> n >> q;
-    cin >> str;
-    while (q--) {
-        int l, r;
-        cin >> l >> r;
-        cout << check(l, r);
-    }
+    cin >> x >> n;
+    cout << fast_pow(x, n) << endl;
+    cout << bitset<10>(37) << endl;
 }
 
 signed main() {
