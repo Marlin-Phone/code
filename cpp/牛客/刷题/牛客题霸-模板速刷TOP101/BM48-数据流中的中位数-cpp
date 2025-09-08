@@ -1,0 +1,28 @@
+#include <bits/stdc++.h>
+using namespace std;
+/**
+ * @nc app=nowcoder id=9be0172896bd43948f8a32fb954e1be1 topic=295 question=23457
+ * lang=C++ 2025-09-08 19:17:38
+ * https://www.nowcoder.com/practice/9be0172896bd43948f8a32fb954e1be1?tpId=295&tqId=23457
+ * [BM48] 数据流中的中位数
+ */
+
+/** @nc code=start */
+
+class Solution {
+  public:
+    vector<int> nums;
+    void Insert(int num) { nums.push_back(num); }
+
+    double GetMedian() {
+        int n = nums.size();
+        sort(nums.begin(), nums.end());
+        if (n % 2 == 1) {
+            return nums[n / 2];
+        } else {
+            return (nums[n / 2 - 1] + nums[n / 2]) / 2.0;
+        }
+    }
+};
+
+/** @nc code=end */
