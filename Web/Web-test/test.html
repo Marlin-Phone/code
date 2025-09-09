@@ -4,20 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JS测试页面</title>
+    <script>
+        function greet(){
+            const name = document.getElementById('name').value.trim();
+            document.getElementById('hello').textContent = !name ? `Hello, 不愿意透露姓名的人!` : `Hello, ${name}!`;
+        }
+
+    </script>
 </head>
+
 <body>
     <h1>JavaScript 测试页面</h1>
-    <button onclick="showGreeting()">点击测试</button>
-    <script src = "test.js"></script>
-    
-    <script>
-        function showGreeting() {
-            const greeting = greet("访客");
-            alert(greeting);
-            console.log(greeting);
-        }
-        console.log("页面加载完成");
-        console.log(greet("管理员"));
-    </script>
+    <form id="myForm">
+    <label>
+        姓名：
+        <input type="text" name="userName" id="name" required>
+    </label>
+
+    <label>
+        年龄：
+        <input type="number" name="userAge" min="0" max="120">
+    </label>
+
+    <label>
+        邮箱：
+        <input type="email" name="userEmail" required>
+    </label>
+
+    <button type="submit">保存</button>
+    <p id="hello"></p>
+    </form>
+
+<script>
+  // 拦截提交 → 做自己的校验/显示
+  document.getElementById('myForm').addEventListener('submit', function (e) {
+    e.preventDefault();                       // ① 阻止浏览器默认跳转/刷新
+
+    const data = new FormData(this);          // ② 一键收集所有带name的控件
+    const name = data.get('userName');
+    document.getElementById('hello').textContent = `Hello, ${name}!`;
+  });
+</script>
+
+    <p id="hello"></p>
 </body>
 </html>
