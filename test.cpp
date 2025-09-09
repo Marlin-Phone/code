@@ -36,7 +36,7 @@ int fast_pow(int x, int n) {
             ans = ans * x;
         }
         x = (x * x);
-        n /= 2;
+        n >>= 1;
     }
     return ans;
 }
