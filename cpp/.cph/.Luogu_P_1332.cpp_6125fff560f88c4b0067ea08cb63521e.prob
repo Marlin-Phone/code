@@ -1,1 +1,0 @@
-{"name":"Luogu - P1332","url":"https://www.luogu.com.cn/problem/P1332","memoryLimit":128000,"timeLimit":1000,"tests":[{"id":1740040063914,"input":"5 4 2 3\n1 1\n5 4\n3 3\n5 3\n2 4\n","output":"3\n1\n3"}],"group":"luogu","srcPath":"d:\\code\\cpp\\Luogu_P_1332.cpp"}

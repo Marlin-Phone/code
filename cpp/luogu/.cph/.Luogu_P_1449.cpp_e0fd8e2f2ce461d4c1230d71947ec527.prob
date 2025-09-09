@@ -1,1 +1,0 @@
-{"name":"Luogu - P1449","url":"https://www.luogu.com.cn/problem/P1449","memoryLimit":128000,"timeLimit":1000,"tests":[{"input":"3.5.2.-*7.+@","output":"16","id":1742823912077},{"id":1742823911998,"input":"10.28.30./*7.-@","output":"-7"}],"group":"luogu","srcPath":"d:\\code\\cpp\\luogu\\Luogu_P_1449.cpp"}

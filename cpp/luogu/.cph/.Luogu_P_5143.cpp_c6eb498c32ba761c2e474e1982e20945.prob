@@ -1,1 +1,0 @@
-{"name":"Luogu - P5143","url":"https://www.luogu.com.cn/problem/P5143","memoryLimit":128000,"timeLimit":1000,"tests":[{"id":1742993530131,"input":"5\n2 2 2\n1 1 1\n4 4 4\n3 3 3\n5 5 5\n","output":"6.928"}],"group":"luogu","srcPath":"d:\\code\\cpp\\luogu\\Luogu_P_5143.cpp"}

@@ -1,1 +1,0 @@
-{"name":"Luogu - P4305","url":"https://www.luogu.com.cn/problem/P4305","memoryLimit":128000,"timeLimit":1500,"tests":[{"id":1744549039361,"input":"2\n11\n1 2 18 3 3 19 2 3 6 5 4\n6\n1 2 3 4 5 6\n","output":"1 2 18 3 19 6 5 4\n1 2 3 4 5 6\n"}],"group":"luogu","srcPath":"d:\\code\\cpp\\luogu\\Luogu_P_4305.cpp"}

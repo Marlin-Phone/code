@@ -1,1 +1,0 @@
-{"name":"Local: T573805","url":"d:\\code\\cpp\\T573805.cpp","tests":[{"id":1739535641735,"input":"5 2 3","output":""},{"id":1739535916810,"input":"10 10 10","output":""},{"id":1739535937970,"input":"1 1 1","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\code\\cpp\\T573805.cpp","group":"local","local":true}

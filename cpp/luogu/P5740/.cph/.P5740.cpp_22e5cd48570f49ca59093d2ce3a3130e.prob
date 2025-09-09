@@ -1,1 +1,0 @@
-{"name":"Local: P5740","url":"d:\\code\\cpp\\P5740\\P5740.cpp","tests":[{"id":1736567026834,"input":"3\nsenpai 114 51 4\nlxl 114 10 23\nfafa 51 42 60","output":"senpai 114 51 4"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\code\\cpp\\P5740\\P5740.cpp","group":"local","local":true}

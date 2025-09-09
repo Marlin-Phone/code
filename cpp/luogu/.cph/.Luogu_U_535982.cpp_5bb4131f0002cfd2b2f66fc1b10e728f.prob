@@ -1,1 +1,0 @@
-{"name":"Luogu - U535982","url":"https://www.luogu.com.cn/problem/U535982","memoryLimit":524288,"timeLimit":1000,"tests":[{"id":1743861285816,"input":"2\n3\nAAABBB\n3\nABAABB","output":"1\n1"}],"group":"luogu","srcPath":"d:\\code\\cpp\\luogu\\Luogu_U_535982.cpp"}

@@ -1,1 +1,0 @@
-{"name":"Local: C","url":"d:\\code\\Astar\\C.cpp","tests":[{"id":1754812126070,"input":"2\n5 2\n-1 1 1 -1 -1\n8 100\n1 1 -1 -1 -1 -1 1 -1","output":"5\n16"},{"id":1754812670962,"input":"","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\code\\Astar\\C.cpp","group":"local","local":true}

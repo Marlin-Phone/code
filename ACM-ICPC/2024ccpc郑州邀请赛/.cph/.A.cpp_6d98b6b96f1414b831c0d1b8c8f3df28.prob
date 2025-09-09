@@ -1,1 +1,0 @@
-{"name":"Local: A","url":"d:\\code\\ACM-ICPC\\temp\\A.cpp","tests":[{"id":1756021969328,"input":"3\n1 6\n12345678 9\n233 2","output":"123456789\n404\n9217006"},{"id":1756023012726,"input":"1\n1 1","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\code\\ACM-ICPC\\temp\\A.cpp","group":"local","local":true}

@@ -1,1 +1,0 @@
-{"name":"Local: 递归","url":"d:\\code\\cpp\\蓝桥\\递归.cpp","tests":[{"id":1742632848174,"input":"1","output":"1"},{"id":1742632902645,"input":"2","output":"1"},{"id":1742632907951,"input":"3","output":"2"},{"id":1742633413342,"input":"100000","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\code\\cpp\\蓝桥\\递归.cpp","group":"local","local":true}

@@ -1,1 +1,0 @@
-{"name":"Local: P5742","url":"d:\\code\\cpp\\P5742\\P5742.cpp","tests":[{"id":1736570307727,"input":"4\n1223 95 59\n1224 50 7\n1473 32 45\n1556 86 99","output":"Excellent\nNot excellent\nNot excellent\nExcellent"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\code\\cpp\\P5742\\P5742.cpp","group":"local","local":true}

@@ -1,1 +1,0 @@
-{"name":"Local: acw1114_practice","url":"d:\\code\\acw1114\\acw1114_practice.cpp","tests":[{"id":1739754895507,"input":"2 1\n#.\n.#\n4 4\n...#\n..#.\n.#..\n#...\n2 1\n##\n##\n-1 -1","output":"2\n1\n4"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\code\\acw1114\\acw1114_practice.cpp","group":"local","local":true}

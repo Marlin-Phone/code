@@ -1,1 +1,0 @@
-{"name":"Luogu - P1090","url":"https://www.luogu.com.cn/problem/P1090","memoryLimit":128000,"timeLimit":800,"tests":[{"id":1743591101037,"input":"3 \n1 2 9 \n","output":"15\n"},{"id":1743592209283,"input":"4\n1 2 9 100","output":""},{"id":1743592273547,"input":"4\n1 1 1 1 \n","output":""}],"group":"luogu","srcPath":"d:\\code\\cpp\\luogu\\Luogu_P_1090.cpp"}

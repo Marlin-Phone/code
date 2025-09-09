@@ -1,1 +1,0 @@
-{"name":"Local: 2-deepseek","url":"d:\\code\\cpp\\T512682\\2-deepseek.cpp","tests":[{"id":1740277882254,"input":"2\n5\n6","output":"1 4\n2 4"},{"id":1740277893131,"input":"1\n100000000000009","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\code\\cpp\\T512682\\2-deepseek.cpp","group":"local","local":true}

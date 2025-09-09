@@ -1,1 +1,0 @@
-{"name":"Luogu - P1098","url":"https://www.luogu.com.cn/problem/P1098","memoryLimit":128000,"timeLimit":1000,"tests":[{"input":"1 2 1\nabcs-w1234-9s-4zz","output":"abcsttuuvvw1234556677889s-4zz","id":1743836241422},{"id":1743836241423,"input":"2 3 2\na-d-d","output":"aCCCBBBd-d"}],"group":"luogu","srcPath":"d:\\code\\cpp\\luogu\\Luogu_P_1098.cpp"}

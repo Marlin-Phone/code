@@ -1,1 +1,0 @@
-{"name":"Luogu - P3613","url":"https://www.luogu.com.cn/problem/P3613","memoryLimit":131072,"timeLimit":1000,"tests":[{"id":1741664399598,"input":"5 4\n1 3 10000 118014\n1 1 1 1\n2 3 10000\n2 1 1","output":"118014\n1"}],"group":"luogu","srcPath":"d:\\code\\cpp\\Luogu_P_3613.cpp"}

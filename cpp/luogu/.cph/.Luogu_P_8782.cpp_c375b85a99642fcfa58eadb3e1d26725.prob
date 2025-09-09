@@ -1,1 +1,0 @@
-{"name":"Luogu - P8782","url":"https://www.luogu.com.cn/problem/P8782","memoryLimit":524288,"timeLimit":1000,"tests":[{"id":1744282475369,"input":"11\n3\n10 4 0\n3\n1 2 0","output":"94"},{"id":1744286805892,"input":"12\n3\n11 4 0\n3\n1 2 0","output":"104"}],"group":"luogu","srcPath":"d:\\code\\cpp\\luogu\\Luogu_P_8782.cpp"}

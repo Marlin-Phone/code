@@ -1,1 +1,0 @@
-{"name":"Luogu - P2240","url":"https://www.luogu.com.cn/problem/P2240","memoryLimit":128000,"timeLimit":1000,"tests":[{"id":1743569478451,"input":"4 50\n10 60\n20 100\n30 120\n15 45\n","output":"240.00"}],"group":"luogu","srcPath":"d:\\code\\cpp\\luogu\\Luogu_P_2240.cpp"}

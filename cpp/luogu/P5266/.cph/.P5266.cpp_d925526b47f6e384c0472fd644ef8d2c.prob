@@ -1,1 +1,0 @@
-{"name":"Local: P5266","url":"d:\\code\\cpp\\luogu\\P5266\\P5266.cpp","tests":[{"id":1749917300532,"input":"5\n1 lxl 10\n2 lxl\n3 lxl\n2 lxl\n4","output":"OK\n10\nDeleted successfully\nNot found\n0\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\code\\cpp\\luogu\\P5266\\P5266.cpp","group":"local","local":true}
