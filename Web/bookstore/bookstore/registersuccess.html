@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>注册成功</title>
+    <link rel="stylesheet" href="css/main.css" type="text/css" />
+    <link type="text/css" href="css/custom.css" rel="stylesheet" />
+  </head>
+  <body class="main" id="registersuccess-page">
+    <!--1.网上书城顶部 start -->
+    <div id="divhead">
+      <table cellspacing="0" class="headtable">
+        <tr>
+          <td>
+            <a href="index.html">
+              <img
+                src="images/logo.png"
+                width="200"
+                height="60"
+                border="0"
+                alt="传智书城logo" />
+            </a>
+          </td>
+          <td style="text-align: right">
+            <img
+              src="images/cart.gif"
+              width="26"
+              height="23"
+              style="margin-bottom: 4px"
+              alt="购物车" />
+            &nbsp;
+            <a href="#">购物车</a>
+            | <a href="#">我的账户</a> | <a href="register.html">新用户注册</a>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <!-- 网上书城顶部 end -->
+    <!--2.网上书城菜单列表 start -->
+    <div id="divmenu">
+      <a href="#">文学</a>
+      <a href="#">生活</a>
+      <a href="#">青春</a>
+      <a href="#">外语</a>
+      <a href="#">经管</a>
+      <a href="#">励志</a>
+      <a href="#">社科</a>
+      <a href="#">学术</a>
+      <a href="#">艺术</a>
+      <a href="#">原版</a>
+      <a href="#">科技</a>
+      <a href="#">考试</a>
+      <a href="#">生活百科</a>
+      <a href="#" style="color: #ffff00">全部商品目录</a>
+    </div>
+    <div id="divsearch">
+      <form action="#" id="searchform">
+        <table width="100%" border="0" cellspacing="0">
+          <tr>
+            <td style="text-align: right; padding-right: 220px">
+              Search
+              <label for="textfield" style="display: none">搜索框</label>
+              <input
+                type="text"
+                name="textfield"
+                class="inputtable"
+                id="textfield"
+                placeholder="请输入书名"
+                onmouseover="this.focus();"
+                onclick="my_click(this, 'textfield');"
+                onBlur="my_blur(this, 'textfield');" />
+              <a href="#">
+                <img
+                  src="images/serchbutton.gif"
+                  border="0"
+                  style="margin-bottom: 4px"
+                  onclick="search()"
+                  alt="搜索" />
+              </a>
+            </td>
+          </tr>
+        </table>
+      </form>
+    </div>
+    <!-- 网上书城菜单列表 end -->
+    <!--3.注册成功 start -->
+    <div id="divcontent">
+      <table width="900px" border="0" cellspacing="0">
+        <tr>
+          <td style="text-align: center; padding: 50px">
+            <h1 style="color: green; font-size: 24px">注册成功！</h1>
+            <p style="margin: 20px 0">恭喜您，您的账户已成功注册。</p>
+            <p style="margin: 20px 0">
+              您可以现在开始购物或返回首页浏览更多商品。
+            </p>
+            <div style="margin: 30px 0">
+              <a href="index.html" class="success-button">返回首页</a>
+              <a href="#" class="success-button">开始购物</a>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <!-- 注册成功 end -->
+    <!--4.网上书城底部 start -->
+    <div id="divfoot">
+      <table width="100%" border="0" cellspacing="0">
+        <tr>
+          <td rowspan="2" style="width: 10%">
+            <img
+              src="images/logo.png"
+              width="195"
+              height="50"
+              style="margin-left: 175px"
+              alt="传智书城logo" />
+          </td>
+          <td style="padding-top: 5px; padding-left: 50px">
+            <a href="#">
+              <font color="#747556"><b>CONTACT US</b></font>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding-left: 50px">
+            <font color="#CCCCCC">
+              <font>COPYRIGHT 2015 &copy; BookStore All Rights RESERVED.</font>
+            </font>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <!-- 网上书城底部 end -->
+  </body>
+</html>

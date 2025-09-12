@@ -1,0 +1,69 @@
+/* 自定义样式文件，用于实现与示例图有所区分的样式变化 */
+
+/* 修改首页背景颜色 */
+#index-page .main {
+    background: #ffffe0; /* 淡黄色背景 */
+}
+
+/* 修改注册页面背景颜色 */
+#register-page .main {
+    background: #ffffe0; /* 淡黄色背景 */
+}
+
+/* 修改注册成功页面背景颜色 */
+#registersuccess-page .main {
+    background: #ffffe0; /* 淡黄色背景 */
+}
+
+/* 调整轮播图边框颜色 */
+#index-page #box_autoplay {
+    border: 8px solid #b4d76d; /* 使用与菜单相同的绿色 */
+}
+
+/* 修改菜单背景色 */
+#index-page #divmenu {
+    background: linear-gradient(to right, #000000, #333333); /* 渐变黑色背景 */
+}
+
+/* 修改搜索栏背景色 */
+#index-page #divsearch {
+    background: linear-gradient(to right, #f59f1d, #ffcc66); /* 渐变橙色背景 */
+}
+
+/* 修改注册页面按钮样式 */
+#register-page .textinput {
+    border: 2px solid #0066FF;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+#register-page .textarea {
+    border: 2px solid #0066FF;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+/* 修改注册成功页面按钮样式 */
+#registersuccess-page .success-button {
+    margin: 0 10px;
+    padding: 12px 24px;
+    background: linear-gradient(to bottom, #0066FF, #003399);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    border: 1px solid #003399;
+    font-weight: bold;
+    display: inline-block;
+}
+
+#registersuccess-page .success-button:hover {
+    background: linear-gradient(to bottom, #003399, #0066FF);
+    cursor: pointer;
+}
+
+/* 修改页脚背景色 */
+#index-page #divfoot,
+#register-page #divfoot,
+#registersuccess-page #divfoot {
+    background: linear-gradient(to right, #efefef, #cccccc); /* 渐变灰色背景 */
+}
