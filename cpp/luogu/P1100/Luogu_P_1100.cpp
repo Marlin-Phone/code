@@ -23,7 +23,8 @@ using namespace std;
 int n;
 
 void solve() {
-    // cin >> n;
+    cin >> n;
+    cout << (((n & 0xffff0000) >> 16) | (n & 0x0000ffff) << 16) << endl;
 }
 
 signed main() {

@@ -16,14 +16,32 @@ using namespace std;
 // Debug
 #define dbg(a) cout << "Dbg: " << #a << " = " << a << endl;
 
-// const double eps = 1e-8;
+// const db eps = 1e-8;
 // const int MOD = 1e9 + 7;
-// const int N = 1e6 + 10;
+const int N = 1e6 + 10;
 
 int n;
+int l[N];
+int lef, righ;
 
 void solve() {
-    // cin >> n;
+    cin >> n;
+    for (int i = 1; i <= n; i++) {
+        cin >> l[i];
+    }
+    for (int i = 1; i <= n; i++) {
+        if (l[i] == 1) {
+            lef = i;
+            break;
+        }
+    }
+    for (int i = n; i >= 1; i--) {
+        if (l[i] == 1) {
+            righ = i;
+            break;
+        }
+    }
+    cout << righ - lef << endl;
 }
 
 signed main() {

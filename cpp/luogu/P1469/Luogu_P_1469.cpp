@@ -16,14 +16,21 @@ using namespace std;
 // Debug
 #define dbg(a) cout << "Dbg: " << #a << " = " << a << endl;
 
-// const double eps = 1e-8;
+// const db eps = 1e-8;
 // const int MOD = 1e9 + 7;
 // const int N = 1e6 + 10;
 
 int n;
+int ans = 0;
 
 void solve() {
-    // cin >> n;
+    cin >> n;
+    for (int i = 0; i < n; i++) {
+        int temp;
+        cin >> temp;
+        ans ^= temp;
+    }
+    cout << ans << endl;
 }
 
 signed main() {
