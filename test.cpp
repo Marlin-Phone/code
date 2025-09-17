@@ -27,24 +27,35 @@ using namespace std;
 // const int MOD = 1e9 + 7;
 // const int N = 1e6 + 10;
 
-int x, n;
-
-int fast_pow(int x, int n) {
-    int ans = 1;
-    while (n > 0) {
-        if ((n & 1) == 1) {
-            ans = ans * x;
-        }
-        x = (x * x);
-        n >>= 1;
-    }
-    return ans;
-}
-
+priority_queue<int> a;                            // 大根堆
+priority_queue<int, vector<int>, greater<int>> b; // 小根堆
 void solve() {
-    cin >> x >> n;
-    cout << fast_pow(x, n) << endl;
-    cout << bitset<10>(37) << endl;
+    int n, k;
+    cin >> n >> k;
+    vector<int> nums(n);
+    for (int i = 0; i < n; i++) {
+        cin >> nums[i];
+    }
+    for (int i = 0; i < n; i++) {
+        if (b.empty() || nums[i] >= b.top()) {
+            b.push(nums[i]);
+        } else {
+            a.push(nums[i]);
+        }
+        while (b.size() > k) {
+            a.push(b.top());
+            b.pop();
+        }
+        while (b.size() < k && !a.empty()) {
+            b.push(a.top());
+            a.pop();
+        }
+        if (b.size() >= k) {
+            cout << b.top() << endl;
+        } else {
+            cout << "Not enough elements" << endl;
+        }
+    }
 }
 
 signed main() {
