@@ -1,0 +1,44 @@
+#include <bits/stdc++.h>
+using namespace std;
+/**
+ * @nc app=nowcoder id=28eb3175488f4434a4a6207f6f484f47 topic=295 question=732 lang=C++
+ * 2025-09-18 08:39:12
+ * https://www.nowcoder.com/practice/28eb3175488f4434a4a6207f6f484f47?tpId=295&tqId=732
+ * [BM84] 最长公共前缀
+ */
+
+/** @nc code=start */
+
+class Solution {
+public:
+    /**
+     * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
+     *
+     * 
+     * @param strs string字符串vector 
+     * @return string字符串
+     */
+    string longestCommonPrefix(vector<string>& strs) {
+        if(strs.empty()){
+            return "";
+        }
+        int idx = 0;
+        string prefix = "";
+        for(int i = 0; ;i++){
+            for(auto str : strs){
+                if(i >= str.size()){
+                    // cout << idx << endl;
+                    return prefix;
+                }
+                if(strs[0][i] == str[i]){
+                    
+                }else{
+                    return prefix;
+                }
+            }
+            prefix += strs[0][i];
+        }
+    }
+};
+
+/** @nc code=end */
