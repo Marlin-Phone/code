@@ -1,3 +1,0 @@
-Lisi 3
-Zhangsan 1
-Wuting 2
